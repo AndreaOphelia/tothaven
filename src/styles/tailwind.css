@@ -8,6 +8,8 @@
   /* Her tilføjes theme variable // tokens */
 }
 
+@plugin "daisyui";
+
 @layer base {
   *,
   ::after,

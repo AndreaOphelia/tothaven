@@ -1,5 +1,22 @@
 ---
+import Link from "./Link.astro";
+
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+<header>
+  <div class="text-center p-2">
+    <p>Åbningstider i dag - 8.00-16.00</p>
+  </div>
+  <nav  class="text-[var(--color-primary-content)] p-2"
+        style="background-color: var(--color-primary); display: flex; justify-content: space-evenly; align-items: center;">
+    <a href="#"><h3>TOTHAVEN</h3></a>
+    <a class="flex" href="#">Udforsk gården <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+      </a>
+    <a href="#">Gårdmejeriet</a>
+    <a href="#">Gårdens produkter</a>
+    <a href="#">Om os</a>
+    <Link href="/kontakt" class="underline hover:text-[var(--color-accent)]">
+      <p>Køb billet</p>
+  </nav>
+</header>

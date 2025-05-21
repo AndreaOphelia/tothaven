@@ -1,0 +1,32 @@
+---
+const {
+  variant = "green", // "green" eller "beige"
+  image = "",
+  title = "",
+  content = "",
+} = Astro.props;
+
+const green = variant === "green";
+const beige = variant === "beige";
+---
+
+<article
+  class={`flex flex-col md:flex-row items-center w-full ${
+    green ? "bg-[var(--color-base-200)]" : ""
+  } ${beige ? "bg-[var(--color-base-100)]" : ""} text-[var(--color-primary)]`}
+>
+  {
+    beige && (
+      <img
+        src={image}
+        alt=""
+        class="w-full md:w-1/2 object-cover h-64 md:h-auto"
+      />
+    )
+  }
+
+  <div class="p-4 md:p-8 w-full md:w-1/2">
+    <h3 class="mb-4">{title}</h3>
+    <p>{content}</p>
+  </div>
+</article>

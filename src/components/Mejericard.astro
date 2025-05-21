@@ -11,22 +11,21 @@ const beige = variant === "beige";
 ---
 
 <article
-  class={`flex flex-col md:flex-row items-center w-full ${
-    green ? "bg-[var(--color-base-200)]" : ""
-  } ${beige ? "bg-[var(--color-base-100)]" : ""} text-[var(--color-primary)]`}
+  class={`flex flex-col md:flex-row  w-full
+    ${green ? "bg-[var(--color-base-200)]" : ""}
+    ${beige ? "bg-[var(--color-base-100)]" : ""}
+    text-[var(--color-primary)]`}
 >
-  {
-    beige && (
-      <img
-        src={image}
-        alt=""
-        class="w-full md:w-1/2 object-cover h-64 md:h-auto"
-      />
-    )
-  }
+  <div
+    class={`flex justify-center items-center w-full md:w-1/2 h-72 md:h-auto ${
+      beige ? "order-first" : "order-last"
+    }`}
+  >
+    <img src={image} alt="" class="w-3/4 max-w-sm h-48 object-cover m-10" />
+  </div>
 
   <div class="p-4 md:p-8 w-full md:w-1/2">
-    <h3 class="mb-4">{title}</h3>
-    <p>{content}</p>
+    <h3 class="mb-4 uppercase font-bold text-xl">{title}</h3>
+    <p class="font-body">{content}</p>
   </div>
 </article>

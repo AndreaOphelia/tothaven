@@ -1,0 +1,45 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import Testemonial from "../components/Testemonial.astro";
+import Mejericard from "../components/Mejericard.astro";
+---
+
+<MainLayout title="Titel">
+  <section>
+    <h1>Gårdmejeriet</h1>
+  </section>
+  <section>
+    <div class="grid grid-cols-3">
+      <img src="#" alt="billede 1" />
+      <div>
+        <h3>Hvor køber jeg?</h3>
+        <p>
+          Vi sælger hovedsageligt vores produkter fra Tothavens egen
+          gårdbutik.Vi har både en selvbetjeningsbutik som har åbent alle dage,
+          hele året fra kl 8 til 20 og en cafe/butik som har åbent i samme
+          tidsrum som besøgsgården. dvs weekender, helligdage og skoleferier kl
+          14-17 Men du kan også finde vores produkter hos vores forhandlere.
+        </p>
+      </div>
+      <img src="#" alt="billede 2" />
+    </div>
+  </section>
+  <section>
+    <Mejericard
+      variant="beige"
+      image="https://picsum.photos/id/238/200/300"
+      title="Yoghurt"
+      content="Vores yoghurt er lavet på vores egen gårdmælk og er tilsat bifidobakterier og skimmelsvampe. Den er ikke tilsat noget som helst og smager derfor af yoghurt fra en rigtig ko."
+    />
+    <Mejericard
+      variant="green"
+      image="https://picsum.photos/id/237/200/300"
+      title="VORES GÅRDMEJERI"
+      content="Vores gårdmælk er pasteuriseret og homogeniseret og indeholder 3,8% fedt og 3,4% protein. Den er ikke tilsat noget som helst og smager derfor af mælk fra en rigtig ko."
+    />
+  </section></MainLayout
+>

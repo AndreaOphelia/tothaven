@@ -1,14 +1,51 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
-
 
 @theme {
   /* Her tilføjes theme variable // tokens */
 }
 
-@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  /*baggrundsfarve*/
+  --color-base-100: oklch(99% 0.01 98);
+  /*baggrundsfarve til ovenpå baggrund hos os lys grøn*/
+  --color-base-200: oklch(98% 0.04 134);
+  --color-base-300: oklch(92% 0.004 286.32);
+  --color-base-content: oklch(45% 0.08 144);
+  /*brand farven, hos os mørkgrøn*/
+  --color-primary: oklch(45% 0.08 144);
+  /*farven ovenpå brand farven*/
+  --color-primary-content: oklch(99% 0.01 98);
+  --color-secondary: oklch(70% 0.165 254.624);
+  --color-secondary-content: oklch(28% 0.091 267.935);
+  /*call to action farven*/
+  --color-accent: oklch(63% 0.2 17);
+  --color-accent-content: oklch(99% 0.01 98);
+  --color-neutral: oklch(27% 0.006 286.033);
+  --color-neutral-content: oklch(98% 0 0);
+  --color-info: oklch(60% 0.126 221.723);
+  --color-info-content: oklch(98% 0.019 200.873);
+  --color-success: oklch(64% 0.2 131.684);
+  --color-success-content: oklch(98% 0.031 120.757);
+  --color-warning: oklch(68% 0.162 75.834);
+  --color-warning-content: oklch(98% 0.026 102.212);
+  --color-error: oklch(59% 0.249 0.584);
+  --color-error-content: oklch(97% 0.014 343.198);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.25rem;
+  --border: 1.5px;
+  --depth: 0;
+  --noise: 0;
+}
 
 @layer base {
   *,
@@ -20,9 +57,7 @@
   }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
 }

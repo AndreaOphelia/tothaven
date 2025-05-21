@@ -33,10 +33,10 @@
   --color-info-content: oklch(98% 0.019 200.873);
   --color-success: oklch(64% 0.2 131.684);
   --color-success-content: oklch(98% 0.031 120.757);
-  --color-warning: oklch(68% 0.162 75.834);
+  /* --color-warning: oklch(68% 0.162 75.834);
   --color-warning-content: oklch(98% 0.026 102.212);
   --color-error: oklch(59% 0.249 0.584);
-  --color-error-content: oklch(97% 0.014 343.198);
+  --color-error-content: oklch(97% 0.014 343.198); */
   --radius-selector: 0.25rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;
@@ -60,4 +60,18 @@
 @layer components {
 }
 @layer utilities {
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("../fonts/Fredoka-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LilitaOne";
+  src: url("../fonts/LilitaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }

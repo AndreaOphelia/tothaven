@@ -6,6 +6,8 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Testemonial from "../components/Testemonial.astro";
 import Mejericard from "../components/Mejericard.astro";
+import Forsidecard1 from "../components/Forsidecard1.astro";
+import Forsidecard2 from "../components/Forsidecard2.astro";
 ---
 
 <MainLayout title="Titel">
@@ -20,6 +22,30 @@ import Mejericard from "../components/Mejericard.astro";
     <Image src={thumbsup} alt="" />
   </article>
 
+  <section class="flex p-5">
+    <Forsidecard1
+      image="https://picsum.photos/id/237/200/300"
+      imagealt="Billede 1"
+      tekst="UDFORSK GÅRDEN"
+      url="Se alt hvad gården byder på"
+    ></Forsidecard1>
+  
+  <Forsidecard2
+    image="https://picsum.photos/id/238/200/300"
+    imagealt="Billede 2"
+    titel="BESØG TOTHAVEN"
+    tekst="Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser. Med en dagsbillet får du adgang til hele gården, hvor både børn og voksne kan hilse på alt fra grise og geder til æsler og kaniner."    
+    slot="BILLET OG ÅRSKORT"
+  ></Forsidecard2>
+
+  <Forsidecard1
+    image="https://picsum.photos/id/237/200/300"
+    imagealt="Billede 3"
+    tekst="GÅRDMEJERIET"
+    url="Se vores produkter"
+  ></Forsidecard1>
+  </section>
+
   <section>
     <h2>Testemonial</h2>
     <Testemonial titel="Karen Wolff" stjerner="6" anmeldelseid="anmeldelse1">
@@ -28,4 +54,6 @@ import Mejericard from "../components/Mejericard.astro";
       omgivelser.”
     </Testemonial>
   </section>
+
+ 
 </MainLayout>

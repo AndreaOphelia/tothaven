@@ -1,0 +1,279 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import Billetcard from "../components/Billetcard.astro";
+---
+
+<MainLayout title="Titel">
+  <section class="form">
+    <!-- Alpine.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+    <div
+      x-data="{
+            showForm: false,
+            currentStep: 0,
+            selectedDate: '',
+            ticketCount: 1,
+            name: '',
+            email: ''
+          }"
+      x-init="
+            $nextTick(() => {
+              $refs.callyCalendar?.addEventListener('change', (e) => {
+                selectedDate = e.target.value
+              })
+            })
+          "
+      class="p-6"
+    >
+      <!-- STEP 0: Vis billetkort -->
+      <template x-if="currentStep === 0">
+        <div>
+          <h2 class="text-[var(--color-primary)]">Køb billet</h2>
+          <p class="text-[var(--color-primary)]">
+            Vi vil gerne have at både dyr og mennesker har en rar oplevelse når
+            Tothaven er åben. Derfor lukker vi kun et begrænset antal gæster
+            ind. Køb din billet på forhånd herunder.
+          </p>
+
+          <Billetcard
+            titel="Køb Entrébillet"
+            tekst="Billetpris 75kr pr person. Børn på 0 og 1 år har gratis adgang."
+          >
+            <button
+              class="btn btn-primary"
+              @click="showForm = true; currentStep = 1">Køb billet</button
+            >
+          </Billetcard>
+
+          <Billetcard
+            titel="Køb årskort"
+            tekst="Et årkort til Tothaven koster 275 kr. pr. person. Børn på 0 og 1 år har gratis adgang."
+          >
+            <!-- Årskort knap kan evt. tilføjes her -->
+          </Billetcard>
+        </div>
+      </template>
+
+      <!-- FORMULAR STARTER HER -->
+      <div
+        x-show="showForm"
+        x-transition
+        class="relative mt-8 max-w-4xl mx-auto p-6 bg-white shadow-xl rounded-2xl"
+      >
+        <!-- ❌ Luk knap -->
+        <button
+          class="absolute top-4 right-4 text-xl text-gray-400 hover:text-[var(--color-accent)]"
+          @click="showForm = false; currentStep = 0"
+          aria-label="Luk"
+        >
+          &times;
+        </button>
+
+        <!-- STEP 1: Vælg dato og billetter -->
+        <div
+          x-show="currentStep === 1"
+          x-transition
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
+        >
+          <!-- Venstre -->
+          <div class="space-y-6">
+            <div class="text-[var(--color-accent)]">
+              <h2 class="text-lg">Åbningstider</h2>
+              <p>14:00 - 17:00</p>
+            </div>
+
+            <div>
+              <h2 class="text-lg">Billetpris</h2>
+              <p>
+                Billetpris: 75 kr pr. person<br />Børn på 0 og 1 år har gratis
+                adgang
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-lg font-semibold">+ Vælg antal billetter</h2>
+              <div class="flex items-center gap-4 mt-2">
+                <button
+                  class="btn btn-sm btn-outline"
+                  @click="if(ticketCount > 1) ticketCount--">-</button
+                >
+                <span class="text-lg font-medium" x-text="ticketCount"></span>
+                <button class="btn btn-sm btn-outline" @click="ticketCount++"
+                  >+</button
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Højre -->
+          <div class="space-y-6">
+            <div>
+              <h2 class="text-lg font-semibold">📅Vælg dato</h2>
+              <calendar-date
+                x-ref="callyCalendar"
+                class="cally bg--[var(--color-primary)] shadow-lg rounded-box"
+              >
+                <svg
+                  aria-label="Previous"
+                  class="fill-current size-4"
+                  slot="previous"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"
+                  ></path>
+                </svg>
+                <svg
+                  aria-label="Next"
+                  class="fill-current size-4"
+                  slot="next"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  ></path>
+                </svg>
+                <calendar-month></calendar-month>
+              </calendar-date>
+            </div>
+
+            <div>
+              <h2 class="text-lg font-semibold">Valgt dato</h2>
+              <p
+                x-text="selectedDate ? 'Valgt dato: ' + selectedDate : 'Ingen dato valgt endnu'"
+                class="text-base"
+              >
+              </p>
+            </div>
+          </div>
+
+          <div class="col-span-full mt-6 text-right">
+            <button
+              class="btn btn-primary"
+              @click="if(selectedDate) currentStep = 2">Næste</button
+            >
+          </div>
+        </div>
+
+        <!-- STEP 2: Bekræft billetvalg -->
+        <div
+          x-show="currentStep === 2"
+          x-transition
+          class="text-[var(--color-primary)] space-y-6"
+        >
+          <h2 class="text-xl font-bold">Bekræft dine valg</h2>
+          <p><strong>Dato:</strong> <span x-text="selectedDate"></span></p>
+          <p>
+            <strong>Antal billetter:</strong>
+            <span x-text="ticketCount"></span>
+          </p>
+
+          <div class="flex justify-between mt-6">
+            <button class="btn btn-outline" @click="currentStep = 1"
+              >Tilbage</button
+            >
+            <button class="btn btn-primary" @click="currentStep = 3"
+              >Næste</button
+            >
+          </div>
+        </div>
+
+        <!-- STEP 3: Kontaktoplysninger -->
+        <div
+          x-show="currentStep === 3"
+          x-transition
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
+        >
+          <div class="space-y-4">
+            <h2 class="text-xl font-semibold">Dine oplysninger</h2>
+            <label class="block">
+              Navn
+              <input
+                type="text"
+                class="input input-bordered w-full"
+                x-model="name"
+                required
+              />
+            </label>
+            <label class="block">
+              Email
+              <input
+                type="email"
+                class="input input-bordered w-full"
+                x-model="email"
+                required
+              />
+            </label>
+          </div>
+
+          <div class="space-y-4">
+            <h2 class="text-xl font-semibold">Dine valg</h2>
+            <p><strong>Dato:</strong> <span x-text="selectedDate"></span></p>
+            <p>
+              <strong>Antal billetter:</strong>
+              <span x-text="ticketCount"></span>
+            </p>
+          </div>
+
+          <div class="col-span-full text-right mt-6">
+            <button class="btn btn-outline mr-2" @click="currentStep = 2"
+              >Tilbage</button
+            >
+            <button class="btn btn-success" @click="currentStep = 4"
+              >Bekræft</button
+            >
+          </div>
+        </div>
+
+        <!-- STEP 4: Tak -->
+        <div
+          x-show="currentStep === 4"
+          x-transition
+          class="text-center py-10 text-[var(--color-primary)]"
+        >
+          <h2 class="text-2xl font-bold mb-4">🎉 Tak for din bestilling!</h2>
+          <p>
+            Vi har modtaget din billetbestilling for <strong
+              x-text="selectedDate"></strong>.
+          </p>
+          <p>En kvittering er sendt til <strong x-text="email"></strong>.</p>
+          <button
+            class="btn btn-primary mt-6"
+            @click="currentStep = 0; showForm = false"
+          >
+            Tilbage til forsiden
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="kalender">
+    <h2 class="text-[var(--color-primary)]">Åbningsdage på Tothaven 2025</h2>
+    <img
+      class="w-full"
+      src="../img/kalender.png"
+      alt="kalender over tothaven"
+    />
+  </section>
+  <section class="map">
+    <div
+      class="text-[var(--color-primary)] grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto"
+    >
+      <img
+        src="../img/kort.png"
+        alt="kort over tothaven"
+        class="w-full h-auto"
+      />
+      <div>
+        <h2 class="text-2xl font-bold">Find vej til Tothaven</h2>
+        <p class="text-lg">Torupvejen 2, 3390 Hundested</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>

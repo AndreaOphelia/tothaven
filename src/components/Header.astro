@@ -1,22 +1,96 @@
 ---
 import Link from "./Link.astro";
-
 ---
-<header>
-  <div class="text-center p-2">
-    <p>Åbningstider i dag - 8.00-16.00</p>
-  </div>
-  <nav  class="text-[var(--color-primary-content)] p-2"
-        style="background-color: var(--color-primary); display: flex; justify-content: space-evenly; align-items: center;">
-    <a href="#"><h3>TOTHAVEN</h3></a>
-    <a class="flex" href="#">Udforsk gården <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-      </svg>
+
+<div x-data="{ showmenu: false }">
+  <header>
+    <div class="text-center p-2">
+      <p>Åbningstider i dag - 8.00-16.00</p>
+    </div>
+
+    <!-- burgermenu -->
+    <div
+      class="flex justify-between items-center p-2 md:hidden"
+      style="background-color: var(--color-primary); color: var(--color-primary-content);"
+    >
+      <a href="/"><h3>TOTHAVEN</h3></a>
+      <button x-on:click="showmenu = !showmenu" aria-label="Toggle menu">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- burgermenu -->
+    <nav
+      x-show="showmenu"
+      x-transition
+      x-on:click.outside="showmenu = false"
+      class="flex flex-col gap-2 p-4 md:hidden text-center"
+      style="background-color: var(--color-primary); color: var(--color-primary-content);"
+    >
+      <a href="/">TOTHAVEN</a>
+      <a class="flex justify-center items-center gap-1" href="#">
+        Udforsk gården
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+        </svg>
       </a>
-    <a href="#">Gårdmejeriet</a>
-    <a href="#">Gårdens produkter</a>
-    <a href="#">Om os</a>
-    <Link href="/kontakt" class="underline hover:text-[var(--color-accent)]">
-      <p>Køb billet</p>
-  </nav>
-</header>
+      <a href="/gordmejeriet">Gårdmejeriet</a>
+      <a href="#">Gårdens produkter</a>
+      <a href="/omos">Om os</a>
+      <Link href="/kontakt" class="underline hover:text-[var(--color-accent)]">
+        <a href="/biletter"><p>Køb billet</p></a>
+      </Link>
+    </nav>
+
+    <!-- normal menu -->
+    <nav
+      class="hidden md:flex text-[var(--color-primary-content)] p-2 justify-evenly items-center"
+      style="background-color: var(--color-primary);"
+    >
+      <a href="/"><h3>TOTHAVEN</h3></a>
+      <a class="flex items-center gap-1" href="#">
+        Udforsk gården
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+        </svg>
+      </a>
+      <a href="/gordmejeriet">Gårdmejeriet</a>
+      <a href="#">Gårdens produkter</a>
+      <a href="/omos">Om os</a>
+      <Link href="/kontakt" class="underline hover:text-[var(--color-accent)]">
+        <a href="/biletter"><p>Køb billet</p></a>
+      </Link>
+    </nav>
+  </header>
+</div>

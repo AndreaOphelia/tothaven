@@ -16,8 +16,14 @@ import Link from "./Link1.astro";
     <img src={image} alt={imagealt} class="place-self-center w-1/3" />
   </div>
   <div>
+<<<<<<< HEAD
     <h3 class="text-center">{titel}</h3>
     <p class="place-self-center">{tekst}</p>
     <Link1><slot />Køb billetter og årskort</Link1>
+=======
+    <h3 class="text-center text-[var(--color-primary)]">{titel}</h3>
+    <p class="place-self-center text-[var(--color-primary)]">{tekst}</p>
+    <Link><slot /></Link>
+>>>>>>> e28b823707b9d97e4b374b03506fd4955dab7401
   </div>
 </div>

@@ -7,7 +7,8 @@ const {
   slot = "",
 } = Astro.props;
 import Button from "./Button.astro";
-import Link from "./Link.astro";
+import Link1 from "./Link1.astro";
+import Link from "./Link1.astro";
 ---
 
 <div class="w-full h-auto overflow-hidden p-1">
@@ -17,6 +18,6 @@ import Link from "./Link.astro";
   <div>
     <h3 class="text-center">{titel}</h3>
     <p class="place-self-center">{tekst}</p>
-    <Link><slot /></Link>
+    <Link1><slot />Køb billetter og årskort</Link1>
   </div>
 </div>

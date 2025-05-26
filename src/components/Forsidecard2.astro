@@ -15,8 +15,8 @@ import Link from "./Link.astro";
     <img src={image} alt={imagealt} class="place-self-center w-1/3" />
   </div>
   <div>
-    <h3 class="text-center">{titel}</h3>
-    <p class="place-self-center">{tekst}</p>
+    <h3 class="text-center text-[var(--color-primary)]">{titel}</h3>
+    <p class="place-self-center text-[var(--color-primary)]">{tekst}</p>
     <Link><slot /></Link>
   </div>
 </div>

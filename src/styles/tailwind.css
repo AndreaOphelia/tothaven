@@ -91,9 +91,9 @@
   a {
     font-family: "Fredoka", sans-serif;
     font-size: 11px;
-  } */
+  }
   /* større skærme typografi */
-  /* @media (min-width: 900px) {
+  @media (min-width: 900px) {
     h1 {
       font-size: 70px;
     }

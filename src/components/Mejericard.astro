@@ -11,17 +11,21 @@ const beige = variant === "beige";
 ---
 
 <article
-  class={`flex flex-col md:flex-row  w-full
+  class={`flex flex-col md:flex-row w-full min-h-screen items-center justify-center py-16
     ${green ? "bg-[var(--color-base-200)]" : ""}
     ${beige ? "bg-[var(--color-base-100)]" : ""}
     text-[var(--color-primary)]`}
 >
   <div
-    class={`flex justify-center items-center w-full md:w-1/2 h-72 md:h-auto ${
+    class={`flex justify-center items-center w-full md:w-1/2 h-72 md:h-auto  ${
       beige ? "order-first" : "order-last"
     }`}
   >
-    <img src={image} alt="" class="w-3/4 max-w-sm h-48 object-cover m-10" />
+    <img
+  src={image}
+  alt=""
+  class="w-3/4 max-w-sm min-h-[200px] max-h-[70vh] h-auto object-contain m-10"
+/>
   </div>
 
   <div class="p-4 md:p-8 w-full md:w-1/2">

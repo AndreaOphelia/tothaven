@@ -7,7 +7,7 @@
   /* Her tilføjes theme variable // tokens */
 
   /*Infinite scroll animation*/
-  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-infinite-scroll: infinite-scroll 20s linear infinite;
 
   @keyframes infinite-scroll {
     from {

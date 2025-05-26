@@ -105,8 +105,96 @@ import Heading from "../components/Heading.astro";
     </div>
   </section>
 
-  <section>
-    grise gif slider
+  <section class="whitespace-nowrap overflow-x-hidden py-4">
+    <!-- Første sæt grise -->
+    <div
+      class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-4"
+    >
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+    </div>
+
+    <!-- Duplikeret sæt for seamless loop -->
+    <div
+      class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-4"
+      aria-hidden="true"
+    >
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+      <span>
+        <img
+          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+          src="/img/grisgrøn.gif"
+          alt="grøn gris"
+        />
+      </span>
+    </div>
   </section>
 
   <section class="lg:px-30 py-10">
@@ -117,18 +205,54 @@ import Heading from "../components/Heading.astro";
 
     <section class="w-full overflow-hidden px-4 py-8">
       <div class="grid grid-cols-3 lg:grid-cols-4 lg:gap-4">
-        <img src="/public/img/gedkys.webp" alt="En ged og en pige" class="w-full h-40 lg:h-50 object-cover rounded" />
-        <img src="/public/img/lillefaar.webp" alt="Lille får og kat" class="w-full lg:h-50 object-cover rounded" />
-        <img src="/public/img/kat.webp" alt="En kat" class="w-full h-50 object-cover rounded" />
-        <img src="/public/img/kobaggrund.webp" alt="To køer på en mark" class="w-full lg:h-50 object-cover rounded" />
-        <img src="/public/img/faar.webp" alt="En lille får" class="w-full lg:h-50 object-cover rounded" />
-        <img src="/public/img/hundgris.webp" alt="En hund og en gris" class="w-full lg:h-50 object-cover rounded" />
-        <img src="/public/img/miniaesler.webp" alt="Mini æsel" class="hidden md:w-full lg:h-50 object-cover rounded " />
-        <img src="/public/img/kaniner.webp" alt="Kaniner" class="w-full lg:h-50 object-cover rounded" />
+        <img
+          src="/public/img/gedkys.webp"
+          alt="En ged og en pige"
+          class="w-full h-40 lg:h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/lillefaar.webp"
+          alt="Lille får og kat"
+          class="w-full lg:h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/kat.webp"
+          alt="En kat"
+          class="w-full h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/kobaggrund.webp"
+          alt="To køer på en mark"
+          class="w-full lg:h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/faar.webp"
+          alt="En lille får"
+          class="w-full lg:h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/hundgris.webp"
+          alt="En hund og en gris"
+          class="w-full lg:h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/miniaesler.webp"
+          alt="Mini æsel"
+          class="hidden md:w-full lg:h-50 object-cover rounded"
+        />
+        <img
+          src="/public/img/kaniner.webp"
+          alt="Kaniner"
+          class="w-full lg:h-50 object-cover rounded"
+        />
+        <span>
+          <img
+            class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+            src="/img/grisgrøn.gif"
+            alt="grøn gris"
+          />
+        </span>
       </div>
     </section>
-    
-
-
   </section>
 </MainLayout>

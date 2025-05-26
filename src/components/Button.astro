@@ -6,16 +6,16 @@ const { variant= "primary", size = "medium" } = Astro.props;
  
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
 
-const buttonStyling = "uppercase rounded-2xl p-2 m-5 text-bold border-4 border-black hover:text-white hover:animate-bounce"; 
+const buttonStyling = "cursor-pointer uppercase rounded-2xl p-2 m-5 text-bold hover:animate-pulse font-['LilitaOne']"; 
 
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
 
 const variantClasses = {
 
-"primary": "hover:bg-sky-600",
+"primary": "border-4 bg-[var(--color-accent)] text-[var(--color-accent-content)] hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)]",
 
-"secondary": "hover:bg-rose-600"
+"secondary": "bg-transparent text-[var(--color-accent)] border-4 border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-[var(--color-accent-content)]",
 
 };
 
@@ -24,11 +24,11 @@ const variantClasses = {
 
 const sizeClasses = {
 
-"large": "text-7xl",
+"large": "text-4xl",
 
-"medium": "text-4xl",
+"medium": "text-2xl",
 
-"small": "text-2xl"
+"small": "text-xl"
 
 };
 
@@ -36,4 +36,4 @@ const sizeClasses = {
 
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
 
-<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot />Klik her</button>
+<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>

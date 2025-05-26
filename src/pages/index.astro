@@ -56,41 +56,52 @@ import Heading from "../components/Heading.astro";
     />
   </section>
 
-  <section class="w-full h-screen relative overflow-hidden p-5">
+  <!-- <section class="w-full h-screen relative overflow-hidden p-5">
     <img
       src="/img/kobaggrund.webp"
       alt="To køer på en mark"
       class="absolute inset-0 w-full h-4/5 object-cover -z-10"
-    />
+    /> -->
+  <section>
+    <div
+      class="w-full h-auto bg-[url('/img/kobaggrund.webp')] bg-cover bg-center"
+    >
+      <!-- Heading -->
+      <div class="text-center mb-16">
+        <h2 class="text-white text-4xl">DET SIGER VORES GÆSTER</h2>
+      </div>
 
-    <!-- Heading -->
-    <div class="text-center mt-20">
-      <h2 class="text-white text-4xl">DET SIGER VORES GÆSTER</h2>
-    </div>
+      <div class="place-items-center lg:grid grid-cols-3 gap-2 m-4 p-4">
+        <Testemonial
+          titel="Karen Wolff"
+          stjerner="6"
+          anmeldelseid="anmeldelse1"
+        >
+          “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet
+          her og glæd dig til en dag fyldt med nærvær, leg og læring i
+          naturskønne omgivelser.”
+        </Testemonial>
 
-    <!-- Testimonials centered horizontally at the bottom -->
-    <div class="absolute bottom-50 w-full flex justify-center gap-6 z-10">
-      <Testemonial titel="Karen Wolff" stjerner="6" anmeldelseid="anmeldelse1">
-        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her
-        og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
-        omgivelser.”
-      </Testemonial>
+        <Testemonial
+          titel="Phillip May"
+          stjerner="6"
+          anmeldelseid="anmeldelse2"
+        >
+          “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet
+          her og glæd dig til en dag fyldt med nærvær, leg og læring i
+          naturskønne omgivelser.”
+        </Testemonial>
 
-      <Testemonial titel="Phillip May" stjerner="6" anmeldelseid="anmeldelse2">
-        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her
-        og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
-        omgivelser.”
-      </Testemonial>
-
-      <Testemonial
-        titel="Tim Christensen"
-        stjerner="6"
-        anmeldelseid="anmeldelse3"
-      >
-        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her
-        og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
-        omgivelser.”
-      </Testemonial>
+        <Testemonial
+          titel="Tim Christensen"
+          stjerner="6"
+          anmeldelseid="anmeldelse3"
+        >
+          “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet
+          her og glæd dig til en dag fyldt med nærvær, leg og læring i
+          naturskønne omgivelser.”
+        </Testemonial>
+      </div>
     </div>
   </section>
 </MainLayout>

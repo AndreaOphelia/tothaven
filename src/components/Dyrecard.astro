@@ -1,0 +1,21 @@
+---
+const {
+  image = "",
+  imagealt = "",
+  titel = "",
+  tekst = "",
+  slot = "",
+} = Astro.props;
+---
+
+<div class="relative w-65 h-95 rounded-xl overflow-hidden shadow-lg">
+    <img 
+      src={image} 
+      alt={imagealt} 
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  
+    <div class="absolute bottom-0 w-full text-white text-center py-2 px-3 opacity-90" style="background-color: var(--color-primary)" >
+      <h4 class="">{titel}</h4>
+    </div>
+  </div>

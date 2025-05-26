@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+import Dyrecard from "../components/Dyrecard.astro"
 ---
 
 
@@ -16,8 +17,78 @@ import MainLayout from "../layouts/MainLayout.astro"
                 <button>Lyd knap</button>
             </div>
         </div>
-        <div>
-            12 cards
+        <div class="grid grid-cols-3 gap-4 mb-10">
+            <Dyrecard 
+            image="/public/img/grise.webp" 
+            imagealt="Kune Kune grise" 
+            titel="Kune Kune Gris">
+            </Dyrecard>
+            
+            <Dyrecard 
+            image="/public/img/miniaesler.webp" 
+            imagealt="Miniæsel" 
+            titel="Miniature Æsler">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/hoens.webp" 
+            imagealt="Høns" 
+            titel="Høns">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/geder.webp" 
+            imagealt="Malkegeder" 
+            titel="Malkegeder">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/kaniner.webp" 
+            imagealt="Kaniner" 
+            titel="Kaniner">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/valais.webp" 
+            imagealt="Valais Får" 
+            titel="Valais Får">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/dexter.webp" 
+            imagealt="Dexter kvæg" 
+            titel="Dexter kvæg">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/aender.webp" 
+            imagealt="Løbeænder" 
+            titel="Løbeænder">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/kalkun.webp" 
+            imagealt="Kalkuner" 
+            titel="Kalkuner">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/pony.webp" 
+            imagealt="Ponyer" 
+            titel="Ponyer">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/hund.webp" 
+            imagealt="Hunde" 
+            titel="Hunde">
+            </Dyrecard>
+
+            <Dyrecard 
+            image="/public/img/kat.webp" 
+            imagealt="Katte" 
+            titel="Katte">
+            </Dyrecard>
         </div>
     </section>
 </MainLayout>

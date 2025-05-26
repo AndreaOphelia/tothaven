@@ -8,7 +8,7 @@ const {
 } = Astro.props;
 import Button from "./Button.astro";
 import Link1 from "./Link1.astro";
-import Link from "./Link1.astro";
+import Link2 from "./Link2.astro";
 ---
 
 <div class="w-full h-auto overflow-hidden p-1">
@@ -18,6 +18,6 @@ import Link from "./Link1.astro";
   <div>
     <h3 class="text-center text-[var(--color-primary)]">{titel}</h3>
     <p class="place-self-center text-[var(--color-primary)]">{tekst}</p>
-    <Link><slot /></Link>
+    <Link1><slot /></Link1>
   </div>
 </div>

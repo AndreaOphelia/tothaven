@@ -1,6 +1,6 @@
 ---
 const { image = "", imagealt = "", tekst = "", url = "#" } = Astro.props;
-import Link from "./Link.astro";
+import Link1 from "./Link1.astro";
 ---
 
 <div class="relative w-full h-auto overflow-hidden p-1">
@@ -12,7 +12,7 @@ import Link from "./Link.astro";
       style="background-color: var(--color-primary);"
     >
       <h4 class="text-[var(--color-primary-content)]">{tekst}</h4>
-      <Link class="mt-1">{url}</Link>
+      <Link1 class="mt-1">{url}</Link1>
     </div>
   </div>
 </div>

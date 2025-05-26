@@ -12,14 +12,17 @@ import Forsidecard2 from "../components/Forsidecard2.astro";
 
 <MainLayout title="Titel">
   <div class="relative w-full h-200 overflow-hidden">
-    <img src="/public/img/hero_index.webp" alt="Pige og en gris" class="">
+    <img src="/public/img/hero_index.webp" alt="Pige og en gris" class="" />
     <div class="absolute bottom-10 left-10">
-    <h1 class="text-[var(--color-primary-content)]">KOM HELT TÆT PÅ DYRENE</h1>
-    <p class="text-[var(--color-primary-content)]">Planlæg en uforglemmelig dag på landet – køb billet til Tothaven</p>
-    <div class="flex justify-end"><Button>KØB BILLET</Button></div>
+      <h1 class="text-[var(--color-primary-content)]">
+        KOM HELT TÆT PÅ DYRENE
+      </h1>
+      <p class="text-[var(--color-primary-content)]">
+        Planlæg en uforglemmelig dag på landet – køb billet til Tothaven
+      </p>
+      <div class="flex justify-end"><Button>KØB BILLET</Button></div>
     </div>
-</div>
-
+  </div>
 
   <section class="md:flex p-5">
     <Forsidecard1
@@ -27,54 +30,59 @@ import Forsidecard2 from "../components/Forsidecard2.astro";
       imagealt="To geder fra Tothaven"
       tekst="UDFORSK GÅRDEN"
       url="Se alt hvad gården byder på"
-    ></Forsidecard1>
-  
-  <Forsidecard2
-    image="https://picsum.photos/id/238/200/300"
-    imagealt="Billede 2"
-    titel="BESØG TOTHAVEN"
-    tekst="Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser. Med en dagsbillet får du adgang til hele gården, hvor både børn og voksne kan hilse på alt fra grise og geder til æsler og kaniner."    
-    slot="BILLET OG ÅRSKORT"
-  ></Forsidecard2>
+    />
 
-  <Forsidecard1
-    image="/public/img/faar.webp"
-    imagealt="Et får fra Tothaven"
-    tekst="GÅRDMEJERIET"
-    url="Se vores produkter"
-  ></Forsidecard1>
+    <Forsidecard2
+      image="https://picsum.photos/id/238/200/300"
+      imagealt="Billede 2"
+      titel="BESØG TOTHAVEN"
+      tekst="Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser. Med en dagsbillet får du adgang til hele gården, hvor både børn og voksne kan hilse på alt fra grise og geder til æsler og kaniner."
+      slot="BILLET OG ÅRSKORT"
+    />
+
+    <Forsidecard1
+      image="/public/img/faar.webp"
+      imagealt="Et får fra Tothaven"
+      tekst="GÅRDMEJERIET"
+      url="Se vores produkter"
+    />
   </section>
 
-
   <section class="w-full h-screen relative overflow-hidden p-5">
-    <img 
-      src="/img/kobaggrund.webp" 
-      alt="To køer på en mark" 
+    <img
+      src="/img/kobaggrund.webp"
+      alt="To køer på en mark"
       class="absolute inset-0 w-full h-4/5 object-cover -z-10"
     />
-  
+
     <!-- Heading -->
     <div class="text-center mt-20">
       <h2 class="text-white text-4xl">DET SIGER VORES GÆSTER</h2>
     </div>
-  
+
     <!-- Testimonials centered horizontally at the bottom -->
     <div class="absolute bottom-50 w-full flex justify-center gap-6 z-10">
       <Testemonial titel="Karen Wolff" stjerner="6" anmeldelseid="anmeldelse1">
-        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser.”
+        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her
+        og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
+        omgivelser.”
       </Testemonial>
-  
-      <Testemonial titel="Phillip May" stjerner="6" anmeldelseid="anmeldelse1">
-        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser.”
+
+      <Testemonial titel="Phillip May" stjerner="6" anmeldelseid="anmeldelse2">
+        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her
+        og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
+        omgivelser.”
       </Testemonial>
-  
-      <Testemonial titel="Tim Christensen" stjerner="6" anmeldelseid="anmeldelse1">
-        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser.”
+
+      <Testemonial
+        titel="Tim Christensen"
+        stjerner="6"
+        anmeldelseid="anmeldelse3"
+      >
+        “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her
+        og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
+        omgivelser.”
       </Testemonial>
     </div>
   </section>
-  
-  
-
- 
 </MainLayout>

@@ -66,9 +66,12 @@
     font-weight: normal;
     text-transform: uppercase;
   }
+  p {
+    max-width: 65ch;
+  }
   h1 {
     font-family: "LilitaOne";
-    font-size: 48px;
+    font-size: 42px;
   }
   h2 {
     font-family: "LilitaOne";

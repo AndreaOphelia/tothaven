@@ -12,19 +12,23 @@ import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout title="Titel">
-  <div class="relative w-full">
-    <img src="/img/index.png" alt="Pige og en gris" class="" />
-    <div class="absolute bottom-10 left-10">
-      <!-- <Heading htmlheading="h3" size="xxlarge" stylingclasses="underline"
-        >jhgjhg</Heading
-      > -->
-      <h1 class="text-[var(--color-primary-content)]">
-        KOM HELT TÆT PÅ DYRENE
-      </h1>
-      <p class="text-[var(--color-primary-content)]">
-        Planlæg en uforglemmelig dag på landet – køb billet til Tothaven
-      </p>
-      <div class="flex justify-end"><Button>KØB BILLET</Button></div>
+  <div class="grid w-full">
+    <img
+      src="/img/index.png"
+      alt="Pige og en gris"
+      class="w-full h-auto object-cover col-start-1 row-start-1"
+    />
+
+    <div
+      class="col-start-1 row-start-1 flex items-end p-4 text-[var(--color-primary-content)]"
+    >
+      <div>
+        <h1>KOM HELT TÆT PÅ DYRENE</h1>
+        <p>Planlæg en uforglemmelig dag på landet - køb billet til Tothaven</p>
+        <div class="flex justify-end mt-4">
+          <Button>KØB BILLET</Button>
+        </div>
+      </div>
     </div>
   </div>
 

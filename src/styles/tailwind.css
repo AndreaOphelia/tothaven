@@ -37,7 +37,7 @@
   --color-secondary: oklch(70% 0.165 254.624);
   --color-secondary-content: oklch(28% 0.091 267.935);
   /*call to action farven*/
-  --color-accent: oklch(63% 0.2 17);
+  --color-accent: oklch(57% 0.2 17);
   --color-accent-content: oklch(99% 0.03 98);
   --color-neutral: oklch(27% 0.006 286.033);
   --color-neutral-content: oklch(98% 0 0);

@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Link1 from "../components/Link1.astro";
 import Mejericard from "../components/Mejericard.astro";
 import Iskort from "../components/Iskort.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout title="Tothaven Gårdmejeri">
@@ -42,8 +43,13 @@ import Iskort from "../components/Iskort.astro";
       variant="green"
       image="/public/img/pindeis.png"
       title="GEDEMÆLKS PINDE-IS"
-      content="Tothavens pindeis er inspireret af den italienske Gelato-tradition. Mælkeisene laver vi på basis af friskmalket mælk fra Tothavens geder, æggeblommer fra Tothavens æg, fløde fra Øllingegård og økologisk sukker fra de Lollandske roemarker. Sorbeterne er lavet af danske økologiske frugter og bær. Vi overtrækker alle isene med god økologisk chokolade fra de Hollandske chokoladekonger Original Beans . Alle vores pindeis laver vi i en stor og en lille udgave – så der både er til den store og lille is-sult. Klik på isene nedenfor og læs om vores smage."
+      content="Tothavens pindeis er inspireret af den italienske Gelato-tradition. Mælkeisene laver vi på basis af friskmalket mælk fra Tothavens geder, æggeblommer fra Tothavens æg, fløde fra Øllingegård og økologisk sukker fra de Lollandske roemarker. Sorbeterne er lavet af danske økologiske frugter og bær. Vi overtrækker alle isene med god økologisk chokolade fra de Hollandske chokoladekonger Original Beans . Alle vores pindeis laver vi i en stor og en lille udgave – så der både er til den store og lille is-sult."
     />
+
+    <section class="flex flex-col items-center text-center mt-4 px-4 sm:px-8 md:px-0">
+      <h2 class="text-[var(--color-primary)]">Hvilken smag er din favorit?</h2>
+      <p class="text-[var(--color-primary)]">Klik på kortene og bliv klogere på de forskellige smage – hver is har sin egen charme</p>
+    </section>
 
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center max-w-4xl mx-auto py-16 px-8">

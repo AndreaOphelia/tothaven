@@ -7,32 +7,27 @@ import Heading from "../components/Heading.astro"
 
 
 <MainLayout>
-  <div class="grid w-full">
-    <img
-      src="/img/index.png"
-      alt="Pige og en gris"
-      class="w-full h-auto object-cover col-start-1 row-start-1"
-    />
-
-    <div
-      class="col-start-1 row-start-1 flex items-end p-4 text-[var(--color-primary-content)]">
-      <div>
-        <h1 class="">Mød dyrene</h1>
-      </div>
-    </div>
+  <div class="relative w-full overflow-hidden mb-12">
+    <img src="/public/img/hero_moddyrene.png" alt="En pige og en gris" class="w-full" />
+    <div class="absolute bottom-12 left-12">
+      <h1 class="text-[var(--color-primary-content)]">MØD DYRENE</h1>
+    </div> 
+  </div>
     
 
-    <section class="px-32">
-        <div>
-            <h3 class="text-[var(--color-primary)]">TOTHAVENS DYR</h3>
+    <section class="max-w-5xl mx-auto">
+        <div class="mb-8">
+            <h3 class="text-[var(--color-primary)] mb-8">TOTHAVENS DYR</h3>
             <div class="grid grid-cols-2">
                 <p class="text-[var(--color-primary)]">På Tothaven er vi glade for dyr… og dyrene er vist også glade for Tothaven…  Neden for kan du læse om de dyr du kan møde på Tothavens Besøgsgård.</p>
-                <button>Lyd knap</button>
+                <div class="grid place-self-end">
+                  <button class="bg-amber-400 w-20 h-20 rounded-full">Lyd knap</button>
+                </div>
             </div>
         </div>
         
 
-        <div class="grid grid-cols-3 gap-4 mb-10">
+        <div class="grid grid-cols-3 gap-24 mb-10 place-self-center ">
            <Dyrecard 
             image="/public/img/grise.webp" 
             imagealt="Kune Kune grise" 

@@ -13,23 +13,33 @@ import Iskort from "../components/Iskort.astro";
     </div>
   </div>
 
-    <div class="grid grid-cols-3 ">
-      <img src="/public/img/griskloe.png" alt="billede 1" />
-      <div>
-        <img src="/public/img/grisgrøn.gif" alt="Gris der springer og falder" />
-        <h3 class="text-[var(--color-primary)]">Hvor køber jeg?</h3>
-        <p class="text-[var(--color-primary)]">
-          Vi sælger hovedsageligt vores produkter fra Tothavens egen
-          gårdbutik. Vi har både en selvbetjeningsbutik som har åbent alle dage,
-          hele året fra kl 8 til 20 og en cafe/butik som har åbent i samme
-          tidsrum som besøgsgården. dvs weekender, helligdage og skoleferier kl
-          14-17 Men du kan også finde vores produkter hos vores forhandlere.
-        </p>
-        <Link1>Læs om vores forhandlere</Link1>
-      </div>
-      <img src="/public/img/kloe.png" alt="billede 2" />
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5 items-start">
+  <!-- Venstre billede -->
+  <div class="mb-4 md:mb-0">
+    <img src="/public/img/mejerigris.png" alt="To geder fra Tothaven" class="w-full h-auto object-cover rounded-md" />
+  </div>
+
+  <!-- Midtersektion med tekst -->
+  <div class="px-0 md:px-4 text-left mb-4 md:mb-0 flex flex-col items-center md:items-start">
+    <div class="overflow-hidden mb-4 flex justify-center">
+      <img src="/public/img/grisgrøn.gif" alt="Gris der springer og falder" class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] object-contain mx-auto" />
     </div>
-  </section>
+    <h3 class="text-xl font-bold text-[var(--color-primary)] mb-2">Hvor køber jeg?</h3>
+    <p class="text-[var(--color-primary)] mb-2">
+      Vi sælger hovedsageligt vores produkter fra Tothavens egen gårdbutik. Vi har både en selvbetjeningsbutik som har åbent alle dage,
+      hele året fra kl 8 til 20 og en cafe/butik som har åbent i samme tidsrum som besøgsgården – dvs. weekender, helligdage og skoleferier kl 14-17.
+      Men du kan også finde vores produkter hos vores forhandlere.
+    </p>
+    <a href="" class="underline text-[var(--color-primary)]">Læs om vores forhandlere</a>
+  </div>
+
+  <!-- Højre billede -->
+  <div>
+    <img src="/public/img/faar.webp" alt="Et får fra Tothaven" class="w-full h-auto object-cover rounded-md" />
+  </div>
+
+</section>
+
   </section>
     <Mejericard
       variant="beige"

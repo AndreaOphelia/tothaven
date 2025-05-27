@@ -17,14 +17,14 @@ const beige = variant === "beige";
     text-[var(--color-primary)]`}
 >
   <div
-    class={`flex justify-center items-center w-full md:w-1/2 ${
+    class={`flex justify-start md:justify-center items-center w-full md:w-1/2 ${
       beige ? "order-first" : "order-last"
     }`}
   >
     <img
       src={image}
       alt=""
-      class="w-11/12 max-w-xs sm:max-w-md md:max-w-lg h-auto max-h-48 sm:max-h-72 md:max-h-[60vh] object-contain mb-6"
+      class="w-11/12 max-w-xs sm:max-w-md md:max-w-lg h-auto max-h-48 sm:max-h-72 md:max-h-[60vh] object-contain mb-6 ml-4 sm:ml-0"
     />
   </div>
 

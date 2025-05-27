@@ -264,52 +264,284 @@ import Billetcard from "../components/Billetcard.astro";
         <div
           x-show="currentStep === 4"
           x-transition
-          class="text-center py-10 text-[var(--color-primary)]"
+          class="py-10 text-[var(--color-primary)] grid grid-cols-2"
         >
-          <h2 class="text-2xl font-bold mb-4">🎉 Tak for din bestilling!</h2>
-          <p>
-            Vi har modtaget din billetbestilling for <strong
-              x-text="selectedDate"></strong>.
-          </p>
-          <p>En kvittering er sendt til <strong x-text="email"></strong>.</p>
-          <button
-            class="btn btn-primary mt-6"
-            @click="currentStep = 0; showForm = false"
-          >
-            Tilbage til forsiden
-          </button>
+          <div>
+            <h2 class="text-2xl font-bold mb-4">🎉 Tak for din bestilling!</h2>
+            <p>
+              Vi har modtaget din billetbestilling for <strong
+                x-text="selectedDate"></strong>.
+            </p>
+            <p>En kvittering er sendt til <strong x-text="email"></strong>.</p>
+            <button
+              class="btn btn-primary mt-6"
+              @click="currentStep = 0; showForm = false"
+            >
+              Luk
+            </button>
+          </div>
+          <img src="img/grisgrøn.gif" alt="grøn gris" />
         </div>
       </div>
     </div>
-  </section>
-  <section class="kalender p-8">
-    <h2 class="text-[var(--color-primary)]">Åbningsdage på Tothaven 2025</h2>
-    <img
-      class="w-full"
-      src="../img/kalender.png"
-      alt="kalender over tothaven"
-    />
-  </section>
-  <section class="map">
-    <div
-      class="text-[var(--color-primary)] grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto"
-    >
-      <img
-        src="../img/kort.png"
-        alt="kort over tothaven"
-        class="w-full h-auto"
-      />
-      <div>
-        <h2 class="text-2xl font-bold">Find vej til Tothaven</h2>
-        <p class="text-lg">Torupvejen 2, 3390 Hundested</p>
+
+    <section class="kalender pl-4">
+      <h2 class="text-[var(--color-primary)]">
+        Åbningsdage på Tothaven i Juni
+      </h2>
+    </section>
+    <section class="max-w-xxl mx-auto mt-8 mb-16 p-8">
+      <div class="grid grid-cols-7 border border-[var(--color-primary)]">
+        <!-- Ugedage -->
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Søn</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Man</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Tir</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Ons</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Tors</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Fre</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Lør</h3>
+        </div>
+
+        <!-- Række 1 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>1</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>2</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>3</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>4</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>5</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>6</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>7</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 2 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>8</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>9</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>10</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>11</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>12</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>13</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>14</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 3 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>15</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>16</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>17</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>18</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>19</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>20</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>21</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 4 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>22</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>23</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>24</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>25</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>26</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>27</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>28</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 5 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>29</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>30</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="map">
+      <div
+        class="text-[var(--color-primary)] grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto"
+      >
+        <img
+          src="../img/kort.png"
+          alt="kort over tothaven"
+          class="w-full h-auto"
+        />
+        <div>
+          <h2 class="text-2xl font-bold">Find vej til Tothaven</h2>
+          <p class="text-lg">Torupvejen 2, 3390 Hundested</p>
+        </div>
+      </div>
+    </section>
   </section>
+  <style>
+    button {
+      font-family: "LilitaOne";
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+  </style>
 </MainLayout>
-<style>
-  button {
-    font-family: "LilitaOne";
-    text-transform: uppercase;
-    color: var(--color-accent);
-  }
-</style>

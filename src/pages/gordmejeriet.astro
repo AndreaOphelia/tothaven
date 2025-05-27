@@ -15,29 +15,46 @@ import Heading from "../components/Heading.astro";
   </div>
 
 <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5 items-start">
-  <!-- Venstre billede -->
-  <div class="mb-4 md:mb-0">
-    <img src="/public/img/mejerigris.png" alt="To geder fra Tothaven" class="w-full h-auto object-cover rounded-md" />
+  <!-- Venstre kort -->
+  <div class="flex flex-col bg-transparent p-0 h-full">
+    <img 
+      src="/public/img/mejerigris.png" 
+      alt="To geder fra Tothaven" 
+      class="w-full h-[400px] md:h-full object-cover"
+    />
   </div>
 
-  <!-- Midtersektion med tekst -->
-  <div class="flex flex-col items-stretch text-left mb-4 md:mb-0 px-0 md:px-4">
-  <div class="flex justify-center mb-4">
-    <img src="/public/img/grisgrøn.gif" alt="Gris der springer og falder" class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] object-contain" />
+  <!-- Midterkort med tekst -->
+  <div class="flex flex-col bg-transparent p-0 items-center
+    my-6 md:my-0
+  ">
+    <div class="flex justify-center mb-4 w-full">
+      <img 
+        src="/public/img/grisgrøn.gif" 
+        alt="Gris der springer og falder" 
+        class="w-[140px] h-[140px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] object-contain mx-auto" 
+      />
+    </div>
+    <div class="flex flex-col items-start w-full max-w-xs mx-auto">
+      <h3 class="text-xl font-bold text-[var(--color-primary)] mb-2">Hvor køber jeg?</h3>
+      <p class="text-[var(--color-primary)] mb-4 text-left">
+        Vi sælger hovedsageligt vores produkter fra Tothavens egen gårdbutik. Vi har både en selvbetjeningsbutik som har åbent alle dage,
+        hele året fra kl 8 til 20 og en cafe/butik som har åbent i samme tidsrum som besøgsgården – dvs. weekender, helligdage og skoleferier kl 14-17.
+        Men du kan også finde vores produkter hos vores forhandlere.
+      </p>
+      <a href="" class="underline text-[var(--color-primary)] text-left">Læs om vores forhandlere</a>
+    </div>
   </div>
-  <h3 class="text-xl font-bold text-[var(--color-primary)] mb-2">Hvor køber jeg?</h3>
-  <p class="text-[var(--color-primary)] mb-2">
-    Vi sælger hovedsageligt vores produkter fra Tothavens egen gårdbutik. Vi har både en selvbetjeningsbutik som har åbent alle dage,
-    hele året fra kl 8 til 20 og en cafe/butik som har åbent i samme tidsrum som besøgsgården – dvs. weekender, helligdage og skoleferier kl 14-17.
-    Men du kan også finde vores produkter hos vores forhandlere.
-  </p>
-  <a href="" class="underline text-[var(--color-primary)]">Læs om vores forhandlere</a>
-</div>
 
-  <!-- Højre billede -->
-  <div>
-    <img src="/public/img/faar.webp" alt="Et får fra Tothaven" class="w-full h-auto object-cover rounded-md" />
+  <!-- Højre kort -->
+  <div class="flex flex-col bg-transparent p-0 h-full">
+    <img 
+      src="/public/img/faarmejeri.png" 
+      alt="Et får fra Tothaven" 
+      class="w-full h-[400px] md:h-full object-cover"
+    />
   </div>
+</section>
 
 </section>
 
@@ -68,6 +85,7 @@ import Heading from "../components/Heading.astro";
     title="Lakrids Gelato" 
     description="Intens lakridsis lavet med lakridspulver fra ASA Spice, saltlakrids og et strejf citronskal. Overtrukket med hvid chokolade, der giver perfekt balance i smagen." 
     bgColor="bg-gray-300"
+    textColor="text-[var(--color-primary)]"
   />
   
   <Iskort 
@@ -75,7 +93,7 @@ import Heading from "../components/Heading.astro";
     title="Chokolade Gelato" 
     description="Friskmalket gedemælk og 65% økologisk mørk chokolade fra Original Beans i intens samklang. Isen er overtrukket med mørk chokolade og pyntet med fine striber af hvid chokolade." 
     bgColor="bg-teal-700"
-    textColor="text-white"
+    textColor="text-[var(--color-primary-content)]"
   />
 
   <Iskort 
@@ -83,13 +101,14 @@ import Heading from "../components/Heading.astro";
     title="Hasselnød Gelato" 
     description="Friskmalket gedemælk og økologiske hasselnødder i skøn forening. Isen er overtrukket med en super lækker 42% mælkechokolade fra Original beans" 
     bgColor="bg-green-700"
-    textColor="text-white"
+    textColor="text-[var(--color-primary-content)]"
   />
     <Iskort 
     image="/public/img/jordbaris.webp" 
     title="Jordbær Gelato" 
     description="Sorbet på pind af lækre solmodne økologiske jordbær fra Ventegodtgård overtrukket med hvid øko chokolade." 
     bgColor="bg-lime-100"
+    textColor="text-[var(--color-primary)]"
   />
   
   <Iskort 
@@ -97,6 +116,7 @@ import Heading from "../components/Heading.astro";
     title="Karamel Gelato" 
     description="Friskmalket gedemælk og 65% økologisk mørk chokolade fra Original Beans i intens samklang. Isen er overtrukket med mørk chokolade og pyntet med fine striber af hvid chokolade." 
     bgColor="bg-yellow-200"
+    textColor="text-[var(--color-primary)]"
   />
 
   <Iskort 
@@ -104,14 +124,14 @@ import Heading from "../components/Heading.astro";
     title="Rabarber/Hindbær Gelato" 
     description="Smagen af Tothaven: Friskmalket gedemælk, bagte rabarber fra Tothavens rabarber”mark” og lidt hindbær “pakket ind” i økologisk hvid chokolade og drysset med frysetørrede rabarber" 
     bgColor="bg-red-400"
-    textColor="text-white"
+    textColor="text-[var(--color-primary-content)]"
   />
     <Iskort 
     image="/public/img/havtornis.webp" 
     title="Havtorn Gelato" 
     description="Lækker frisk mælkeis med en aromatisk smag af havtorn. Isen er overtrukket med hvid chokolade og drysset med Hindbærstøv." 
     bgColor="bg-pink-500"
-    textColor="text-white"
+    textColor="text-[var(--color-primary-content)]"
   />
   
   <Iskort 
@@ -119,7 +139,7 @@ import Heading from "../components/Heading.astro";
     title="Hyldeblomst" 
     description="Frisk sommer-is med økologiske hyldeblomster, friskpresset citron og citronskal og overtrukket med 65% mørk chokolade." 
     bgColor="bg-purple-400"
-    textColor="text-white"
+    textColor="text-[var(--color-primary-content)]"
   />
 
   <Iskort 
@@ -127,6 +147,7 @@ import Heading from "../components/Heading.astro";
     title="Solbær" 
     description="Solbær gelato med den lækre sommerlige sødme og syre fra friske solbær. Isen er overtrukket med hvid chokoalde og drysset med solbærstøv" 
     bgColor="bg-pink-100"
+    textColor="text-[var(--color-primary)]"
   />
 </div>
 

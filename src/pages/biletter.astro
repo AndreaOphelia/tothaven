@@ -96,15 +96,14 @@ import Billetcard from "../components/Billetcard.astro";
           x-transition
           class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
         >
-          <!-- Venstre -->
           <div class="space-y-6">
             <div class="text-[var(--color-accent)]">
-              <h2 class="text-lg">Åbningstider</h2>
+              <h4 class="">Åbningstider</h4>
               <p>14:00 - 17:00</p>
             </div>
 
             <div>
-              <h2 class="text-lg">Billetpris</h2>
+              <h4 class="">Billetpris</h4>
               <p>
                 Billetpris: 75 kr pr. person<br />Børn på 0 og 1 år har gratis
                 adgang
@@ -112,7 +111,7 @@ import Billetcard from "../components/Billetcard.astro";
             </div>
 
             <div>
-              <h2 class="text-lg font-semibold">+ Vælg antal billetter</h2>
+              <h4 class="font-semibold">+ Vælg antal billetter</h4>
               <div class="flex items-center gap-4 mt-2">
                 <button
                   class="btn btn-sm btn-outline"
@@ -126,13 +125,12 @@ import Billetcard from "../components/Billetcard.astro";
             </div>
           </div>
 
-          <!-- Højre -->
           <div class="space-y-6">
             <div>
-              <h2 class="text-lg font-semibold">📅Vælg dato</h2>
+              <h4 class="font-semibold">Vælg dato</h4>
               <calendar-date
                 x-ref="callyCalendar"
-                class="cally bg--[var(--color-primary)] shadow-lg rounded-box"
+                class="cally bg--[var(--color-base-100)] shadow-lg rounded-box"
               >
                 <svg
                   aria-label="Previous"
@@ -159,7 +157,7 @@ import Billetcard from "../components/Billetcard.astro";
             </div>
 
             <div>
-              <h2 class="text-lg font-semibold">Valgt dato</h2>
+              <h4 class="font-semibold">Valgt dato</h4>
               <p
                 x-text="selectedDate ? 'Valgt dato: ' + selectedDate : 'Ingen dato valgt endnu'"
                 class="text-base"
@@ -268,7 +266,7 @@ import Billetcard from "../components/Billetcard.astro";
       </div>
     </div>
   </section>
-  <section class="kalender">
+  <section class="kalender p-8">
     <h2 class="text-[var(--color-primary)]">Åbningsdage på Tothaven 2025</h2>
     <img
       class="w-full"

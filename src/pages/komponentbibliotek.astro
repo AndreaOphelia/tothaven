@@ -1,0 +1,71 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link1 from "../components/Link1.astro";
+import Billetcard from "../components/Billetcard.astro";
+import Dyrecard from "../components/Dyrecard.astro";
+import Forsidecard1 from "../components/Forsidecard1.astro";
+import Forsidecard2 from "../components/Forsidecard2.astro";
+import Iskort from "../components/Iskort.astro";
+import Link2 from "../components/Link1.astro";
+import Mejericard from "../components/Mejericard.astro";
+import Testemonial from "../components/Testemonial.astro";
+---
+
+<MainLayout title="Titel">
+  <Billetcard
+    titel="Køb Entrébillet"
+    tekst="Billetpris 75kr pr person. Børn på 0 og 1 år har gratis adgang."
+  >
+    <button class="btn btn-primary" @click="showForm = true; currentStep = 1"
+      >Køb billet</button
+    >
+  </Billetcard>
+  <Button size="small">KØB BILLET</Button>
+  <Button size="medium">KØB BILLET</Button>
+  <Button size="large">KØB BILLET</Button>
+
+  <Dyrecard
+    image="/public/img/grise.webp"
+    imagealt="Kune Kune grise"
+    titel="Kune Kune Grise"
+    backtitle="Kune Kune Grise"
+    backtext="Vores små, tamme grise fra New Zealand elsker mennesker og kommer tæt på. De græsser i stedet for at rode, og hvert forår og sommer får vi nye kuld. Kune Kune betyder “fed og rund” på maori – og det passer perfekt!"
+    sound="/public/sounds/gris.mp3"
+  />
+
+  <Forsidecard2
+    image="/public/img/grisgrøn.gif"
+    imagealt="Billede 2"
+    titel="BESØG TOTHAVEN"
+    tekst="Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser. Med en dagsbillet får du adgang til hele gården, hvor både børn og voksne kan hilse på alt fra grise og geder til æsler og kaniner."
+    slot="BILLET OG ÅRSKORT"
+  />
+
+  <Forsidecard1
+    image="/public/img/goatlove.webp"
+    imagealt="To geder fra Tothaven"
+    tekst="UDFORSK GÅRDEN"
+    url="Se alt hvad gården byder på"
+  />
+
+  <Mejericard
+    variant="beige"
+    image="/public/img/jakobmejeri.webp"
+    title="VORES GÅRDMEJERI"
+    content="Vi, Pernille, Jakob, Martha og Andrea, har boet her siden februar 2014 hvor vi købte gården af Søren, som i mange år havde drevet den med fritids gartneri og dyrehold. På gården driver vi nu besøgsgård, mejeri, strikkeri, og så udbyder vi mentorforløb for udsatte unge. Besøger du gården kan du møde mange forskelllige dyr bla: høns, Kune Kune grise, Ungarske Uldsvin, malkegeder med kid, moskusænder, løbeænder, kalkuner, honningbier, heste, kaniner, katte og æsler."
+  />
+
+  <Testemonial titel="Karen Wolff" stjerner="6" anmeldelseid="anmeldelse1">
+    “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og
+    glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne
+    omgivelser.”
+  </Testemonial>
+
+  <Iskort
+    image="/public/img/lakrids1.png"
+    title="Lakrids Gelato"
+    description="Intens lakridsis lavet med lakridspulver fra ASA Spice, saltlakrids og et strejf citronskal. Overtrukket med hvid chokolade, der giver perfekt balance i smagen."
+    bgColor="bg-gray-300"
+  />
+</MainLayout>

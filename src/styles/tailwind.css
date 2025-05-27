@@ -7,14 +7,14 @@
   /* Her tilføjes theme variable // tokens */
 
   /*Infinite scroll animation*/
-  --animate-infinite-scroll: infinite-scroll 20s linear infinite;
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
 
   @keyframes infinite-scroll {
     from {
       transform: translateX(0);
     }
     to {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
   }
 }

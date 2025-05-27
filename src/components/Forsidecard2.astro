@@ -11,12 +11,12 @@ import Link1 from "./Link1.astro";
 import Link2 from "./Link2.astro";
 ---
 
-<div class="w-full h-auto overflow-hidden p-1">
+<div class="w-full h-auto overflow-hidden p-4">
   <div>
     <img src={image} alt={imagealt} class="place-self-center w-1/3" />
   </div>
   <div>
-    <h3 class="text-center text-[var(--color-primary)]">{titel}</h3>
+    <h3 class="r text-[var(--color-primary)]">{titel}</h3>
     <p class="place-self-center text-[var(--color-primary)]">{tekst}</p>
     <Link1><slot /></Link1>
   </div>

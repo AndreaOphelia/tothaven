@@ -105,7 +105,7 @@
   }
   a {
     font-family: "Fredoka", sans-serif;
-    font-size: 11px;
+    font-size: 14px;
   }
   /*mellem skærme*/
   @media (min-width: 768px) {
@@ -125,7 +125,7 @@
       font-size: 16px;
     }
     a {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 
@@ -147,7 +147,7 @@
       font-size: 20px;
     }
     a {
-      font-size: 14px;
+      font-size: 20px;
     }
   }
 }

@@ -61,7 +61,7 @@ import Billetcard from "../components/Billetcard.astro";
             tekst="Billetpris 75kr pr person. Børn på 0 og 1 år har gratis adgang."
           >
             <button
-              class="btn btn-primary"
+              class="btn btn-primary cursor-pointer"
               @click="showForm = true; currentStep = 1">Køb billet</button
             >
           </Billetcard>
@@ -83,7 +83,7 @@ import Billetcard from "../components/Billetcard.astro";
       >
         <!-- ❌ Luk knap -->
         <button
-          class="absolute top-4 right-4 text-xl text-gray-400 hover:text-[var(--color-accent)]"
+          class="absolute top-4 right-4 text-xl text-gray-400 hover:text-[var(--color-accent)] cursor-pointer"
           @click="showForm = false; currentStep = 0"
           aria-label="Luk"
         >
@@ -120,7 +120,7 @@ import Billetcard from "../components/Billetcard.astro";
                   @click="if(ticketCount > 1) ticketCount--">-</button
                 >
                 <span class="text-lg font-medium" x-text="ticketCount"></span>
-                <button class="btn btn-sm btn-outline" @click="ticketCount++"
+                <button class="btn btn-sm btn-outline" @click="ticketCount++ "
                   >+</button
                 >
               </div>
@@ -170,7 +170,7 @@ import Billetcard from "../components/Billetcard.astro";
 
           <div class="col-span-full mt-6 text-right">
             <button
-              class="btn btn-primary"
+              class="btn btn-primary cursor-pointer"
               @click="if(selectedDate) currentStep = 2">Næste</button
             >
           </div>
@@ -190,11 +190,13 @@ import Billetcard from "../components/Billetcard.astro";
           </p>
 
           <div class="flex justify-between mt-6">
-            <button class="btn btn-outline" @click="currentStep = 1"
-              >Tilbage</button
+            <button
+              class="btn btn-outline cursor-pointer"
+              @click="currentStep = 1 ">Tilbage</button
             >
-            <button class="btn btn-primary" @click="currentStep = 3"
-              >Næste</button
+            <button
+              class="btn btn-primary cursor-pointer"
+              @click="currentStep = 3 ">Næste</button
             >
           </div>
         </div>
@@ -251,11 +253,13 @@ import Billetcard from "../components/Billetcard.astro";
           </div>
 
           <div class="col-span-full text-right mt-6">
-            <button class="btn btn-outline mr-2" @click="currentStep = 2"
-              >Tilbage</button
+            <button
+              class="btn btn-outline mr-2 cursor-pointer"
+              @click="currentStep = 2 ">Tilbage</button
             >
-            <button class="btn btn-success" @click="currentStep = 4"
-              >Bekræft</button
+            <button
+              class="btn btn-success cursor-pointer"
+              @click="currentStep = 4 ">Bekræft</button
             >
           </div>
         </div>
@@ -274,7 +278,7 @@ import Billetcard from "../components/Billetcard.astro";
             </p>
             <p>En kvittering er sendt til <strong x-text="email"></strong>.</p>
             <button
-              class="btn btn-primary mt-6"
+              class="btn btn-primary mt-6 cursor-pointer"
               @click="currentStep = 0; showForm = false"
             >
               Luk

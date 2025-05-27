@@ -81,6 +81,11 @@
   p {
     max-width: 65ch;
   }
+  button {
+    font-family: "LilitaOne";
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
   h1 {
     font-family: "LilitaOne";
     font-size: 42px;

@@ -53,7 +53,7 @@ const {
 }
 </style>
 
-<section x-data="{ flipped: false }" class="relative rounded-xl overflow-hidden shadow-lg card-container w-64 h-80 cursor-pointer dyrecard">
+<section x-data="{ flipped: false }" class="relative rounded-xl overflow-hidden shadow-lg card-container w-45 h-60 lg:w-64 lg:h-80 cursor-pointer dyrecard">
   <!-- lyd -->
   <audio x-ref="animalSound">
     <source src={sound} type="audio/mpeg" />
@@ -84,7 +84,7 @@ const {
     <div class="card-face card-back rounded-xl p-4 flex flex-col items-center justify-center shadow-xl">
       <div class="w-full flex flex-col items-center">
         <h4 class="mb-2 text-left">{backtitle || titel}</h4>
-        <p class="text-base text-left">{backtext || tekst}</p>
+        <p class="text-sm md:text-base text-left">{backtext || tekst}</p>
       </div>
     </div>
   </div>

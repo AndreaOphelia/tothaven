@@ -1,5 +1,5 @@
 ---
-const { image = "", imagealt = "", tekst = "", url = "#" } = Astro.props;
+const { image = "", imagealt = "", tekst = "", url="", content="" } = Astro.props;
 import Link1 from "./Link1.astro";
 ---
 
@@ -12,7 +12,7 @@ import Link1 from "./Link1.astro";
       style="background-color: var(--color-primary);"
     >
       <h4 class="text-[var(--color-primary-content)]">{tekst}</h4>
-      <Link1 variant="textlink" class="mt-1">{url}</Link1>
+      <Link1 href={url} variant="textlink" class="mt-1">{content}</Link1>
     </div>
   </div>
 </div>

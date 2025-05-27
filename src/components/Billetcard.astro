@@ -1,5 +1,6 @@
 ---
-const { titel = "", tekst = "" } = Astro.props;
+const {image = "",
+  imagealt = "", titel = "", tekst = "" } = Astro.props;
 ---
 
 <article
@@ -11,11 +12,7 @@ const { titel = "", tekst = "" } = Astro.props;
   "
 >
   <div class="w-full">
-    <img
-      src="../img/hero_billetter.webp"
-      alt="billet billede"
-      class="w-full h-auto"
-    />
+  <img src={image} alt={imagealt} />
   </div>
 
   <div class="space-y-2">

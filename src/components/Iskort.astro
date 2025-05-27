@@ -25,17 +25,19 @@ const { image, title, description, bgColor, textColor } = Astro.props;
 }
 </style>
 
-<div class="card-container w-64 h-80 cursor-pointer" onclick="this.querySelector('.card').classList.toggle('flipped')">
-  <div class="card relative w-full h-full">
-    <!-- Front -->
-    <div class="card-face absolute w-full h-full bg-white rounded-xl overflow-hidden shadow-xl">
-      <img src={image} alt={title} class="w-full h-full object-cover" />
-    </div>
-
-    <!-- Back -->
-    <div class={`card-face card-back absolute w-full h-full ${bgColor} ${textColor} rounded-xl p-4 flex flex-col justify-center items-start text-left shadow-xl`}>
-      <h2 class="text-xl font-bold mb-2">{title}</h2>
-      <p class="text-sm">{description}</p>
+<div class="flex justify-center items-center w-full min-h-[22rem] my-6">
+  <div class="card-container w-64 h-80 cursor-pointer"
+    onclick="this.querySelector('.card').classList.toggle('flipped')">
+    <div class="card relative w-full h-full">
+      <!-- Front -->
+      <div class="card-face absolute w-full h-full rounded-xl overflow-hidden shadow-xl">
+        <img src={image} alt={title} class="w-full h-full object-cover" />
+      </div>
+      <!-- Back -->
+      <div class={`card-face card-back absolute w-full h-full ${bgColor} ${textColor} rounded-xl p-4 flex flex-col justify-center items-start text-left shadow-xl`}>
+        <h2 class="text-xl font-bold mb-2">{title}</h2>
+        <p class="text-sm">{description}</p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,28 @@
 ---
 // Henter parametrene fra Astro.props
-const { href="#", target="_self"} = Astro.props; 
+const { href="#" , target="_self" , variant= "", size = "medium" } = Astro.props; 
+ 
+//Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
+
+const linkStyling = "cursor-pointer text-[var(--color-primary-content)] font-['Fredoka']   "; 
+ 
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
+const variantClasses = {
+"textlink": "underline",
+"primary": "uppercase border-4 rounded-2xl p-2 m-2 text-bold bg-[var(--color-accent)] text-[var(--color-accent-content)] hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)] font-['LilitaOne']",
+"secondary": "uppercase border-4 rounded-2xl p-2 m-2 text-bold bg-transparent text-[var(--color-accent)]  border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-[var(--color-accent-content)] font-['LilitaOne']"
+};
+ 
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
+const sizeClasses = {
+"large": "text-4xl",
+
+"medium": "text-2xl",
+
+"small": "text-xl",
+
+"xsmall": "text-sm",
+};
 ---
-<a href={href} class="underline text-[var(--color-primary-content)]" target={target}><slot /></a>
+<!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
+<a href={href} target={target} class:list={[linkStyling, variantClasses[variant], sizeClasses[size]]}><slot /></a>

@@ -185,94 +185,27 @@ import Heading from "../components/Heading.astro";
     </div>
   </section>
 
-  <section class="whitespace-nowrap overflow-x-hidden py-4">
-    <!-- Første sæt grise -->
-    <div
-      class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-4"
-    >
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-    </div>
-
-    <div
-      class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-4"
-      aria-hidden="true"
-    >
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
-      <span>
-        <img
-          class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
-          src="/img/grisgrøn.gif"
-          alt="grøn gris"
-        />
-      </span>
+  <section class="overflow-x-hidden whitespace-nowrap">
+    <div class="inline-block animate-infinite-scroll min-w-[200vw]">
+      {Array(8).fill(0).map(() => (
+        <>
+          <span>
+            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
+          </span>
+          <span>
+            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
+          </span>
+          <span>
+            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
+          </span>
+          <span>
+            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
+          </span>
+          <span>
+            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
+          </span>
+        </>
+      ))}
     </div>
   </section>
 

@@ -10,11 +10,11 @@
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
 
   @keyframes infinite-scroll {
-    from {
+    0% {
       transform: translateX(0);
     }
-    to {
-      transform: translateX(100%);
+    100% {
+      transform: translateX(-50%);
     }
   }
 }

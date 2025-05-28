@@ -22,15 +22,7 @@ import Billetcard from "../components/Billetcard.astro";
     </div>
   </div>
 
-  <div
-    class="col-start-1 row-start-1 flex items-end p-4 text-[var(--color-primary-content)]"
-  >
-    <div>
-      <h1 class="">Billetter og årskort</h1>
-    </div>
-  </div>
-
-  <section class="form">
+  <section class="form mx-16">
     <!-- Alpine.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -59,7 +51,7 @@ import Billetcard from "../components/Billetcard.astro";
       <template x-if="currentStep === 0">
         <div>
           <h2 class="text-[var(--color-primary)]">Køb billet</h2>
-          <p class="text-[var(--color-primary)]">
+          <p class="text-[var(--color-primary)] mb-8">
             Vi vil gerne have at både dyr og mennesker har en rar oplevelse når
             Tothaven er åben. Derfor lukker vi kun et begrænset antal gæster
             ind. Køb din billet på forhånd herunder.

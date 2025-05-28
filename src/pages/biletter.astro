@@ -14,15 +14,11 @@ import Billetcard from "../components/Billetcard.astro";
       loading="eager"
     />
     <div class="absolute bottom-12 left-12">
-      <h1
-        class="text-4xl md:text-6xl font-bold text-[var(--color-primary-content)]"
-      >
-        BILETTER OG ÅRSKORT
-      </h1>
+      <h1 class="text-[var(--color-primary-content)]">BILETTER OG ÅRSKORT</h1>
     </div>
   </div>
 
-  <section class="form mx-16">
+  <section class="form mx-8 md:mx-16">
     <!-- Alpine.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -76,7 +72,7 @@ import Billetcard from "../components/Billetcard.astro";
             tekst="Et årkort til Tothaven koster 275 kr. pr. person. Børn på 0 og 1 år har gratis adgang."
           >
             <!-- Årskort knap kan evt. tilføjes her -->
-            <button class="btn btn-primary cursor-pointer">Køb billet</button>
+            <button class="btn btn-primary cursor-pointer">Køb årskort</button>
           </Billetcard>
         </div>
       </template>
@@ -300,7 +296,7 @@ import Billetcard from "../components/Billetcard.astro";
         Åbningsdage på Tothaven i Juni
       </h2>
     </section>
-    <section class="max-w-xxl mx-auto mt-8 mb-16 px-8 md:px-32">
+    <section class="max-w-xxl mx-auto mt-8 mb-16 px-8">
       <div class="grid grid-cols-7 border border-[var(--color-primary)]">
         <!-- Ugedage -->
         <div

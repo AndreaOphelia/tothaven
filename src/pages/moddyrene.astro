@@ -21,6 +21,7 @@ import Heading from "../components/Heading.astro"
             <div class="grid grid-cols-3">
                 <p class="text-[var(--color-primary)] col-span-2">På Tothaven er vi glade for dyr… og dyrene er vist også glade for Tothaven…  Neden for kan du læse om de dyr du kan møde på Tothavens Besøgsgård.</p>
                 <div class="grid place-self-end col-span-1">
+                  
                   <button class="w-15 h-15 md:w-20 md:h-20 rounded-full" style="background-color: var(--color-accent);"> 
                     <div x-data="{ toggled: false }" class="grid place-self-center text-[var(--color-primary-content)] cursor-pointer" @click="toggled = !toggled">
                       <template x-if="!toggled">

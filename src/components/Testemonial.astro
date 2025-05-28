@@ -6,7 +6,7 @@ const {
   date = ""
 } = Astro.props;
 
-// Generate initials from name for avatar fallback
+// generer initialer fra avatar-navnet
 const getInitials = (name) => {
   return name.split(' ').map(word => word[0]).join('').toUpperCase();
 };
@@ -25,7 +25,7 @@ const initials = getInitials(titel);
   "
 >
 
-  <!-- Header with rustic avatar -->
+  <!-- Header med avatar-->
   <div class="flex items-start mb-4 mt-2">
     <div class="flex-shrink-0 mr-4">
       <div 

@@ -63,7 +63,7 @@ import Heading from "../components/Heading.astro";
 
 
 <section class="relative py-20 overflow-hidden">
-  <!-- Background with parallax effect -->
+  <!-- baggrund -->
   <div class="absolute inset-0 bg-[url('/img/smukkalkun.webp')] bg-cover bg-center bg-fixed"></div>
   <div class="relative container mx-auto px-6">
     <div class="text-center mb-16">
@@ -71,7 +71,7 @@ import Heading from "../components/Heading.astro";
         Det Siger Vores <span class="text-[var(--color-accent)]">Gæster</span>
       </h2>
       
-      <!-- Overall rating display -->
+      <!-- rating sektion -->
       <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-8" style="font-family: 'Fredoka', sans-serif;">
         <div class="flex items-center space-x-2">
           <span class="text-3xl">⭐⭐⭐⭐⭐</span>
@@ -117,7 +117,7 @@ import Heading from "../components/Heading.astro";
       </Testemonial>
     </div>
     
-    <!-- Call to action -->
+    <!-- Cta -->
     <div class="flex flex-col items-center justify-center text-center mt-16">
       <p class="text-[var(--color-primary-content)]/90 mb-6 text-lg">Vil du også dele din oplevelse?</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -264,7 +264,6 @@ import Heading from "../components/Heading.astro";
       target="_blank"
       rel="noopener noreferrer"
       class="group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-      key={index}
     >
       <img
         src={image.src}
@@ -286,6 +285,6 @@ import Heading from "../components/Heading.astro";
     animate
   } from "motion";
   
-  // Initial page load animation
+  // page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
 </script>

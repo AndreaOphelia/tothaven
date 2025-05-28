@@ -29,16 +29,16 @@ import Billetcard from "../components/Billetcard.astro";
       <h1 class="">Billetter og årskort</h1>
     </div>
   </div>
-</MainLayout>
-<section class="form">
-  <!-- Alpine.js -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    defer></script>
-  <script type="module" src="https://unpkg.com/cally"></script>
 
-  <div
-    x-data="{
+  <section class="form">
+    <!-- Alpine.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+    <div
+      x-data="{
             showForm: false,
             currentStep: 0,
             selectedDate: '',
@@ -46,511 +46,515 @@ import Billetcard from "../components/Billetcard.astro";
             name: '',
             email: ''
           }"
-    x-init="
+      x-init="
             $nextTick(() => {
               $refs.callyCalendar?.addEventListener('change', (e) => {
                 selectedDate = e.target.value
               })
             })
           "
-    class="p-6"
-  >
-    <!-- STEP 0: Vis billetkort -->
-    <template x-if="currentStep === 0">
-      <div>
-        <h2 class="text-[var(--color-primary)]">Køb billet</h2>
-        <p class="text-[var(--color-primary)]">
-          Vi vil gerne have at både dyr og mennesker har en rar oplevelse når
-          Tothaven er åben. Derfor lukker vi kun et begrænset antal gæster ind.
-          Køb din billet på forhånd herunder.
-        </p>
-
-        <Billetcard
-          image="../img/gedkys.webp"
-          imagealt="billede af dyr"
-          titel="Køb Entrébillet"
-          tekst="Billetpris 75kr pr person. Børn på 0 og 1 år har gratis adgang."
-        >
-          <button
-            class="btn btn-primary cursor-pointer"
-            @click="showForm = true; currentStep = 1">Køb billet</button
-          >
-        </Billetcard>
-
-        <Billetcard
-          image="../img/griskloe.webp"
-          imagealt="billede af dyr"
-          titel="Køb årskort"
-          tekst="Et årkort til Tothaven koster 275 kr. pr. person. Børn på 0 og 1 år har gratis adgang."
-        >
-          <!-- Årskort knap kan evt. tilføjes her -->
-        </Billetcard>
-      </div>
-    </template>
-
-    <!-- FORMULAR STARTER HER -->
-    <div
-      x-show="showForm"
-      x-transition
-      class="relative mt-8 max-w-4xl mx-auto p-6 bg-[var(--color-base-200)] shadow-xl rounded-2xl"
+      class="p-6"
     >
-      <!-- ❌ Luk knap -->
-      <button
-        class="absolute top-4 right-4 text-xl text-gray-400 hover:text-[var(--color-accent)] cursor-pointer"
-        @click="showForm = false; currentStep = 0"
-        aria-label="Luk"
-      >
-        &times;
-      </button>
+      <!-- STEP 0: Vis billetkort -->
+      <template x-if="currentStep === 0">
+        <div>
+          <h2 class="text-[var(--color-primary)]">Køb billet</h2>
+          <p class="text-[var(--color-primary)]">
+            Vi vil gerne have at både dyr og mennesker har en rar oplevelse når
+            Tothaven er åben. Derfor lukker vi kun et begrænset antal gæster
+            ind. Køb din billet på forhånd herunder.
+          </p>
 
-      <!-- STEP 1: Vælg dato og billetter -->
-      <div
-        x-show="currentStep === 1"
-        x-transition
-        class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
-      >
-        <div class="space-y-6">
-          <div class="text-[var(--color-accent)]">
-            <h4 class="">Åbningstider</h4>
-            <p>14:00 - 17:00</p>
-          </div>
-
-          <div>
-            <h4 class="">Billetpris</h4>
-            <p>
-              Billetpris: 75 kr pr. person<br />Børn på 0 og 1 år har gratis
-              adgang
-            </p>
-          </div>
-
-          <div>
-            <h4 class="font-semibold">+ Vælg antal billetter</h4>
-            <div
-              class="flex items-center justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] w-24 p-2"
+          <Billetcard
+            image="../img/gedkys.webp"
+            imagealt="billede af dyr"
+            titel="Køb Entrébillet"
+            tekst="Billetpris 75kr pr person. Børn på 0 og 1 år har gratis adgang."
+          >
+            <button
+              class="btn btn-primary cursor-pointer"
+              @click="showForm = true; currentStep = 1">Køb billet</button
             >
-              <button
-                class="btn btn-sm btn-outline"
-                @click="if(ticketCount > 1) ticketCount--">-</button
+          </Billetcard>
+
+          <Billetcard
+            image="../img/griskloe.webp"
+            imagealt="billede af dyr"
+            titel="Køb årskort"
+            tekst="Et årkort til Tothaven koster 275 kr. pr. person. Børn på 0 og 1 år har gratis adgang."
+          >
+            <!-- Årskort knap kan evt. tilføjes her -->
+          </Billetcard>
+        </div>
+      </template>
+
+      <!-- FORMULAR STARTER HER -->
+      <div
+        x-show="showForm"
+        x-transition
+        class="relative mt-8 max-w-4xl mx-auto p-6 bg-[var(--color-base-200)] shadow-xl rounded-2xl"
+      >
+        <!-- ❌ Luk knap -->
+        <button
+          class="absolute top-4 right-4 text-xl text-gray-400 hover:text-[var(--color-accent)] cursor-pointer"
+          @click="showForm = false; currentStep = 0"
+          aria-label="Luk"
+        >
+          &times;
+        </button>
+
+        <!-- STEP 1: Vælg dato og billetter -->
+        <div
+          x-show="currentStep === 1"
+          x-transition
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
+        >
+          <div class="space-y-6">
+            <div class="text-[var(--color-accent)]">
+              <h4 class="">Åbningstider</h4>
+              <p>14:00 - 17:00</p>
+            </div>
+
+            <div>
+              <h4 class="">Billetpris</h4>
+              <p>
+                Billetpris: 75 kr pr. person<br />Børn på 0 og 1 år har gratis
+                adgang
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-semibold">+ Vælg antal billetter</h4>
+              <div
+                class="flex items-center justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] w-24 p-2"
               >
-              <span class="text-lg font-medium" x-text="ticketCount"></span>
-              <button class="btn btn-sm btn-outline" @click="ticketCount++ "
-                >+</button
-              >
+                <button
+                  class="btn btn-sm btn-outline"
+                  @click="if(ticketCount > 1) ticketCount--">-</button
+                >
+                <span class="text-lg font-medium" x-text="ticketCount"></span>
+                <button class="btn btn-sm btn-outline" @click="ticketCount++ "
+                  >+</button
+                >
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="space-y-6">
-          <div>
-            <h4 class="">Vælg dato</h4>
-            <calendar-date
-              x-ref="callyCalendar"
-              class="cally bg--[var(--color-base-100)] shadow-lg rounded-box"
-            >
-              <svg
-                aria-label="Previous"
-                class="fill-current size-4"
-                slot="previous"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
+          <div class="space-y-6">
+            <div>
+              <h4 class="">Vælg dato</h4>
+              <calendar-date
+                x-ref="callyCalendar"
+                class="cally bg--[var(--color-base-100)] shadow-lg rounded-box"
               >
-                <path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"
-                ></path>
-              </svg>
-              <svg
-                aria-label="Next"
-                class="fill-current size-4"
-                slot="next"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
+                <svg
+                  aria-label="Previous"
+                  class="fill-current size-4"
+                  slot="previous"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"
+                  ></path>
+                </svg>
+                <svg
+                  aria-label="Next"
+                  class="fill-current size-4"
+                  slot="next"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  ></path>
+                </svg>
+                <calendar-month></calendar-month>
+              </calendar-date>
+            </div>
+
+            <div>
+              <h4 class="font-semibold">Valgt dato</h4>
+              <p
+                x-text="selectedDate ? 'Valgt dato: ' + selectedDate : 'Ingen dato valgt endnu'"
+                class="text-base"
               >
-                <path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-              </svg>
-              <calendar-month></calendar-month>
-            </calendar-date>
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h4 class="font-semibold">Valgt dato</h4>
-            <p
-              x-text="selectedDate ? 'Valgt dato: ' + selectedDate : 'Ingen dato valgt endnu'"
-              class="text-base"
+          <div class="col-span-full mt-6 text-right">
+            <button
+              class="btn btn-primary cursor-pointer"
+              @click="if(selectedDate) currentStep = 2">Næste</button
             >
-            </p>
           </div>
         </div>
 
-        <div class="col-span-full mt-6 text-right">
-          <button
-            class="btn btn-primary cursor-pointer"
-            @click="if(selectedDate) currentStep = 2">Næste</button
-          >
-        </div>
-      </div>
-
-      <!-- STEP 2: Bekræft billetvalg -->
-      <div
-        x-show="currentStep === 2"
-        x-transition
-        class="text-[var(--color-primary)] space-y-6"
-      >
-        <h2 class="text-xl font-bold">Bekræft dine valg</h2>
-        <p><strong>Dato:</strong> <span x-text="selectedDate"></span></p>
-        <p>
-          <strong>Antal billetter:</strong>
-          <span x-text="ticketCount"></span>
-        </p>
-
-        <div class="flex justify-between mt-6">
-          <button
-            class="btn btn-outline cursor-pointer"
-            @click="currentStep = 1 ">Tilbage</button
-          >
-          <button
-            class="btn btn-primary cursor-pointer"
-            @click="currentStep = 3 ">Næste</button
-          >
-        </div>
-      </div>
-
-      <!-- STEP 3: Kontaktoplysninger -->
-      <div
-        x-show="currentStep === 3"
-        x-transition
-        class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
-      >
-        <div class="space-y-4">
-          <h4 class="font-semibold">Dine oplysninger</h4>
-          <label class="block">
-            Navn
-            <input
-              type="text"
-              class="input w-full space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] bg-[var(--color-base-200)] p-2"
-              x-model="name"
-              required
-              placeholder="Anders And"
-            />
-          </label>
-          <label class="block">
-            Email
-            <input
-              type="email"
-              class="input w-full space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] bg-[var(--color-base-200)] p-2"
-              x-model="email"
-              required
-              placeholder="andersand@gmail.com"
-            />
-          </label>
-          <label class="block">
-            Gentag Email
-            <input
-              type="email"
-              class="input w-full space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] bg-[var(--color-base-200)] p-2"
-              x-model="email"
-              required
-              placeholder="andersand@gmail.com"
-            />
-          </label>
-        </div>
-
+        <!-- STEP 2: Bekræft billetvalg -->
         <div
-          class="space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] p-2"
+          x-show="currentStep === 2"
+          x-transition
+          class="text-[var(--color-primary)] space-y-6"
         >
-          <h2 class="text-xl font-semibold">Dine valg</h2>
+          <h2 class="text-xl font-bold">Bekræft dine valg</h2>
           <p><strong>Dato:</strong> <span x-text="selectedDate"></span></p>
           <p>
             <strong>Antal billetter:</strong>
             <span x-text="ticketCount"></span>
           </p>
+
+          <div class="flex justify-between mt-6">
+            <button
+              class="btn btn-outline cursor-pointer"
+              @click="currentStep = 1 ">Tilbage</button
+            >
+            <button
+              class="btn btn-primary cursor-pointer"
+              @click="currentStep = 3 ">Næste</button
+            >
+          </div>
         </div>
 
-        <div class="col-span-full text-right mt-6">
-          <button
-            class="btn btn-outline mr-2 cursor-pointer"
-            @click="currentStep = 2 ">Tilbage</button
+        <!-- STEP 3: Kontaktoplysninger -->
+        <div
+          x-show="currentStep === 3"
+          x-transition
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--color-primary)]"
+        >
+          <div class="space-y-4">
+            <h4 class="font-semibold">Dine oplysninger</h4>
+            <label class="block">
+              Navn
+              <input
+                type="text"
+                class="input w-full space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] bg-[var(--color-base-200)] p-2"
+                x-model="name"
+                required
+                placeholder="Anders And"
+              />
+            </label>
+            <label class="block">
+              Email
+              <input
+                type="email"
+                class="input w-full space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] bg-[var(--color-base-200)] p-2"
+                x-model="email"
+                required
+                placeholder="andersand@gmail.com"
+              />
+            </label>
+            <label class="block">
+              Gentag Email
+              <input
+                type="email"
+                class="input w-full space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] bg-[var(--color-base-200)] p-2"
+                x-model="email"
+                required
+                placeholder="andersand@gmail.com"
+              />
+            </label>
+          </div>
+
+          <div
+            class="space-y-4 justify-center gap-4 mt-2 border-3 rounded-xl border-[var(--color-primary)] p-2"
           >
-          <button
-            class="btn btn-success cursor-pointer"
-            @click="currentStep = 4 ">Bekræft</button
-          >
+            <h2 class="text-xl font-semibold">Dine valg</h2>
+            <p><strong>Dato:</strong> <span x-text="selectedDate"></span></p>
+            <p>
+              <strong>Antal billetter:</strong>
+              <span x-text="ticketCount"></span>
+            </p>
+          </div>
+
+          <div class="col-span-full text-right mt-6">
+            <button
+              class="btn btn-outline mr-2 cursor-pointer"
+              @click="currentStep = 2 ">Tilbage</button
+            >
+            <button
+              class="btn btn-success cursor-pointer"
+              @click="currentStep = 4 ">Bekræft</button
+            >
+          </div>
+        </div>
+
+        <!-- STEP 4: Tak -->
+        <div
+          x-show="currentStep === 4"
+          x-transition
+          class="py-10 text-[var(--color-primary)] grid grid-cols-2"
+        >
+          <div>
+            <h2 class="text-2xl font-bold mb-4">🎉 Tak for din bestilling!</h2>
+            <p>
+              Vi har modtaget din billetbestilling for <strong
+                x-text="selectedDate"></strong>.
+            </p>
+            <p>En kvittering er sendt til <strong x-text="email"></strong>.</p>
+            <button
+              class="btn btn-primary mt-6 cursor-pointer"
+              @click="currentStep = 0; showForm = false"
+            >
+              Luk
+            </button>
+          </div>
+          <img src="img/grisgrøn.gif" alt="grøn gris" />
         </div>
       </div>
+    </div>
 
-      <!-- STEP 4: Tak -->
+    <section class="kalender pl-4">
+      <h2 class="text-[var(--color-primary)]">
+        Åbningsdage på Tothaven i Juni
+      </h2>
+    </section>
+    <section class="max-w-xxl mx-auto mt-8 mb-16 p-8">
+      <div class="grid grid-cols-7 border border-[var(--color-primary)]">
+        <!-- Ugedage -->
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Søn</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Man</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Tir</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Ons</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Tors</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Fre</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
+        >
+          <h3>Lør</h3>
+        </div>
+
+        <!-- Række 1 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>1</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>2</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>3</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>4</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>5</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>6</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>7</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 2 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>8</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>9</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>10</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>11</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>12</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>13</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>14</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 3 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>15</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>16</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>17</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>18</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>19</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>20</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>21</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 4 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>22</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>23</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>24</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>25</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>26</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>27</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>28</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+
+        <!-- Række 5 -->
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
+        >
+          <h3>29</h3>
+          <p class="text-[var(--color-accent)]">14-17</p>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
+        >
+          <h3>30</h3>
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+        <div
+          class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
+        >
+        </div>
+      </div>
+    </section>
+
+    <section class="map">
       <div
-        x-show="currentStep === 4"
-        x-transition
-        class="py-10 text-[var(--color-primary)] grid grid-cols-2"
+        class="text-[var(--color-primary)] grid grid-cols-1 md:grid-cols-3 gap-2 p-2 max-w-4xl mx-auto"
       >
+        <img
+          src="../img/kort.webp"
+          alt="kort over tothaven"
+          class="w-full h-auto md:col-span-2 aspect-1/1]"
+        />
         <div>
-          <h2 class="text-2xl font-bold mb-4">🎉 Tak for din bestilling!</h2>
-          <p>
-            Vi har modtaget din billetbestilling for <strong
-              x-text="selectedDate"></strong>.
-          </p>
-          <p>En kvittering er sendt til <strong x-text="email"></strong>.</p>
-          <button
-            class="btn btn-primary mt-6 cursor-pointer"
-            @click="currentStep = 0; showForm = false"
-          >
-            Luk
-          </button>
+          <h2 class="">Find vej til Tothaven</h2>
+          <p class="">Torupvejen 2, 3390 Hundested</p>
         </div>
-        <img src="img/grisgrøn.gif" alt="grøn gris" />
       </div>
-    </div>
-  </div>
-
-  <section class="kalender pl-4">
-    <h2 class="text-[var(--color-primary)]">Åbningsdage på Tothaven i Juni</h2>
-  </section>
-  <section class="max-w-xxl mx-auto mt-8 mb-16 p-8">
-    <div class="grid grid-cols-7 border border-[var(--color-primary)]">
-      <!-- Ugedage -->
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Søn</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Man</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Tir</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Ons</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Tors</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Fre</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
-      >
-        <h3>Lør</h3>
-      </div>
-
-      <!-- Række 1 -->
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>1</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>2</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>3</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>4</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>5</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>6</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>7</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-
-      <!-- Række 2 -->
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>8</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>9</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>10</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>11</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>12</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>13</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>14</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-
-      <!-- Række 3 -->
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>15</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>16</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>17</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>18</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>19</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>20</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>21</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-
-      <!-- Række 4 -->
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>22</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>23</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>24</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>25</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>26</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>27</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>28</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-
-      <!-- Række 5 -->
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4 bg-[var(--color-base-200)]"
-      >
-        <h3>29</h3>
-        <p class="text-[var(--color-accent)]">14-17</p>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 text-[var(--color-primary)] pl-4"
-      >
-        <h3>30</h3>
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
-      >
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
-      >
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
-      >
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
-      >
-      </div>
-      <div
-        class="border border-[var(--color-primary)] h-25 flex justify-center items-center"
-      >
-      </div>
-    </div>
-  </section>
-
-  <section class="map">
-    <div
-      class="text-[var(--color-primary)] grid grid-cols-1 md:grid-cols-3 gap-2 p-2 max-w-4xl mx-auto"
-    >
-      <img
-        src="../img/kort.webp"
-        alt="kort over tothaven"
-        class="w-full h-auto md:col-span-2 aspect-1/1]"
-      />
-      <div>
-        <h2 class="">Find vej til Tothaven</h2>
-        <p class="">Torupvejen 2, 3390 Hundested</p>
-      </div>
-    </div>
-  </section>
-</section>
+    </section>
+  </section></MainLayout
+>
 <style>
   button {
     font-family: "LilitaOne";

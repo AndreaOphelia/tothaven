@@ -121,24 +121,48 @@ import Heading from "../components/Heading.astro";
     <div class="flex flex-col items-center justify-center text-center mt-16">
       <p class="text-[var(--color-primary-content)]/90 mb-6 text-lg">Vil du også dele din oplevelse?</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a 
-        href="" 
-        class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] font-semibold text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
+        <Link1
+        href="#"
+        target="_self"
+        variant="secondary"
+        size=""
       >
         Skriv en anmeldelse
-        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        <svg
+          class="ml-2 w-4 h-4 inline-block"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
         </svg>
-      </a>
-      <a 
-        href="/biletter" 
-        class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] font-semibold text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
-      >
-        Book dit besøg
-        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </a>
+      </Link1>
+      <Link1
+              href="/biletter"
+              target="_self"
+              variant="secondary"
+              size=""
+            >
+              Book et besøg
+              <svg
+                class="ml-2 w-4 h-4 inline-block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link1>
       </div>
     </div>
     </div>

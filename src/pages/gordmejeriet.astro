@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Mejericard from "../components/Mejericard.astro";
 import Iskort from "../components/Iskort.astro";
+import Link1 from "../components/Link1.astro";
 
 ---
 
@@ -73,19 +74,31 @@ import Iskort from "../components/Iskort.astro";
             <p class="text-[var(--color-primary)] leading-relaxed text-base md:text-lg">
               Men du kan også finde vores produkter hos vores forhandlere.
             </p>
+            <div class="mt-4 flex justify-center text-sm">
+              <Link1
+              href="https://tothaven.dk/produkter/hvor-kan-man-koebe-det/"
+              target="_blank"
+              variant="secondary"
+              size=""
+            >
+              Læs om vores forhandlere
+              <svg
+                class="ml-2 w-4 h-4 inline-block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link1>
             
-            <div class="pt-4">
-                <a 
-                  href="https://tothaven.dk/produkter/hvor-kan-man-koebe-det/" 
-                  target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] font-semibold text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
-                >
-                  Læs om vores forhandlere
-                  <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-            </div>
+          </div>
+
           </div>
         </div>
 

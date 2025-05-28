@@ -14,7 +14,7 @@ import Link1 from "../components/Link1.astro";
   <!-- Hero Sektion og overskrift -->
   <div class="relative w-full overflow-hidden">
     <img
-      src="/img/gedeflok.webp"
+      src="/img/gardmejeri_hero.webp"
       alt="Tothaven Gårdmejeri hero billede"
       class="w-full h-[400px] md:h-[500px] object-cover"
       loading="eager"
@@ -352,27 +352,9 @@ import Link1 from "../components/Link1.astro";
 </MainLayout>
 
 <script is:inline>
-  import {
-    animate,
-    stagger,
-    inView,
-  } from "motion";
-  
+
   // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
-  
-  // Animate cards on scroll
-  const cards = document.querySelectorAll('[class*="grid"] > div, .mejericard');
-  if (cards.length > 0) {
-    inView(cards, ({ target }) => {
-      animate(
-        target,
-        { opacity: [0, 1], y: [20, 0] },
-        { duration: 0.5, delay: stagger(0.1) }
-      );
-    });
-  }
-
 </script>
 
 <script is:client>

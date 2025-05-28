@@ -27,11 +27,11 @@ import Link1 from "../components/Link1.astro";
   </div>
   <!-- Intro og billeder -->
   <section class="py-16 px-4">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-8xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         
         <!-- Venstre billedkort -->
-        <div class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] rounded-2xl">
+        <div class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] rounded-2xl hidden lg:block">
           <div class="relative w-full h-72 sm:h-96 lg:h-full">
             <img
               src="/img/rabarberpindeis.webp"
@@ -39,6 +39,7 @@ import Link1 from "../components/Link1.astro";
               class="w-full h-full object-cover absolute inset-0"
               style="position: absolute; inset: 0;"
               loading="lazy"
+              
             />
           </div>
         </div>
@@ -103,7 +104,7 @@ import Link1 from "../components/Link1.astro";
         </div>
 
         <!-- Højre billedkort -->
-        <div class="rounded-2xl group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] bg-[var(--color-primary-content)]">
+        <div class="rounded-2xl group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] bg-[var(--color-primary-content)] hidden lg:block">
           <div class="relative w-full h-72 sm:h-96 lg:h-full">
             <img
               src="/img/oste.webp"

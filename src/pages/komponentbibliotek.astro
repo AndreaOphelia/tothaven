@@ -17,14 +17,30 @@ import Testemonial from "../components/Testemonial.astro";
     titel="Køb Entrébillet"
     tekst="Billetpris 75kr pr person. Børn på 0 og 1 år har gratis adgang."
   >
-    <button class="btn btn-primary" @click="showForm = true; currentStep = 1"
-      >Køb billet</button
-    >
+  <Button size="small">KØB BILLET</Button>
   </Billetcard>
+
+  <div class="bg-indigo-950 p-10">
+
+  <Link1 variant="textlink" size="medium">KLIK HER</Link1>
+  <Link1 variant="primary" size="xsmall">KLIK HER</Link1>
+  <Link1 variant="primary" size="small">KLIK HER</Link1>
+  <Link1 variant="primary" size="medium">KLIK HER</Link1>
+  <Link1 variant="primary" size="large">KLIK HER</Link1>
+  <Link1 variant="secondary" size="xsmall">KLIK HER</Link1>
+  <Link1 variant="secondary" size="small">KLIK HER</Link1>
+  <Link1 variant="secondary" size="medium">KLIK HER</Link1>
+  <Link1 variant="secondary" size="large">KLIK HER</Link1>
+</div>
+
+
+
   <Button size="xsmall">KØB BILLET</Button>
   <Button size="small">KØB BILLET</Button>
   <Button size="medium">KØB BILLET</Button>
   <Button size="large">KØB BILLET</Button>
+
+  
 
   <Dyrecard
     image="/public/img/grise.webp"

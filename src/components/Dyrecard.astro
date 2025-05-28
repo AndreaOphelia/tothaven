@@ -53,7 +53,10 @@ const {
 }
 </style>
 
-<section x-data="{ flipped: false }" class="relative rounded-xl overflow-hidden shadow-lg card-container w-45 h-60 lg:w-64 lg:h-80 cursor-pointer dyrecard">
+<section
+  x-data="{ flipped: false }"
+  class="relative rounded-xl overflow-hidden shadow-lg card-container w-52 h-72 sm:w-60 sm:h-80 lg:w-72 lg:h-96 cursor-pointer dyrecard"
+>
   <!-- lyd -->
   <audio x-ref="animalSound">
     <source src={sound} type="audio/mpeg" />

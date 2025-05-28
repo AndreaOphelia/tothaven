@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro"
 import Dyrecard from "../components/Dyrecard.astro"
 import Iskort from "../components/Iskort.astro"
 import Heading from "../components/Heading.astro"
+import Link1 from "../components/Link1.astro";
 ---
 
 
@@ -46,7 +47,7 @@ import Heading from "../components/Heading.astro"
       </section>
         
         <section class="grid justify-center">
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 md:max-w-7xl mx-auto py-16 px-4 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:max-w-7xl mx-auto py-16 px-4 ">
            <Dyrecard 
             image="/img/grislinger.webp" 
             imagealt="Kune Kune grise" 
@@ -139,7 +140,7 @@ import Heading from "../components/Heading.astro"
             </Dyrecard>
 
             <Dyrecard 
-            image="/img/hund.webp" 
+            image="/img/hundgris.webp" 
             imagealt="Hunde" 
             titel="Hunde"
             backtitle="Hunde"
@@ -157,12 +158,113 @@ import Heading from "../components/Heading.astro"
             </Dyrecard>
         </div>
       </section>
+      
+  <!-- Call to Action Section -->
+  <section class="relative py-16 px-4 overflow-hidden">
+    <!-- Parallax background -->
+    <div class="absolute inset-0 bg-[url('/img/kobaggrund.webp')] bg-cover bg-center bg-fixed pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
+      <h3 class="text-3xl md:text-4xl font-bold text-[var(--color-primary-content)] mb-4 drop-shadow-lg">
+        Kom og besøg os på Tothaven!
+      </h3>
+      <p class="text-lg md:text-xl mb-8 text-[var(--color-primary-content)] opacity-90 max-w-2xl mx-auto">
+        Mød alle vores skønne dyr og oplev gårdslivet på nært hold.
+      </p>
+      <a
+        href="/biletter"
+        class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] font-semibold text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
+      >
+        Book dit besøg
+        <svg
+          class="ml-2 w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  .hero-section {
+    position: relative;
+    border-radius: 0 0 2rem 2rem;
+    overflow: hidden;
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for better accessibility */
+  button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+</style>
+
 <script>
-  import {
-    animate
-  } from "motion";
+  import { animate } from "motion";
   
   // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
+  
+  // Stagger animation for animal cards
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.dyrecard');
+    
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          animate(
+            entry.target,
+            { 
+              opacity: [0, 1], 
+              y: [50, 0],
+              scale: [0.9, 1]
+            },
+            { 
+              duration: 0.6,
+              delay: index * 0.1,
+              easing: "ease-out"
+            }
+          );
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      observer.observe(card);
+    });
+  });
 </script>

@@ -4,7 +4,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Om på Tothaven">
   <div class="relative w-full overflow-hidden">
-    <img src="/public/img/omos.webp" alt="Pernille og Jakob" class="w-full" />
+    <img src="/img/omos.webp" alt="Pernille og Jakob" class="w-full" />
     <div class="absolute bottom-12 left-12">
       <h1 class="text-[var(--color-primary-content)]">OM OS</h1>
     </div>
@@ -126,10 +126,18 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
     <div class="flex lg:justify-center">
       <img
-        src="/public/img/kogaatur.webp"
+        src="/img/kogaatur.webp"
         alt="Pernille går tur med ko"
         class="w-full p-8"
       />
     </div>
   </section>
 </MainLayout>
+<script>
+  import {
+    animate
+  } from "motion";
+  
+  // Initial page load animation
+  animate("body", { opacity: [0, 1] }, { duration: 0.5 });
+</script>

@@ -13,7 +13,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Hero Sektion og overskrift -->
   <div class="relative w-full overflow-hidden">
     <img
-      src="/public/img/gedeflok.webp"
+      src="/img/gedeflok.webp"
       alt="Tothaven Gårdmejeri hero billede"
       class="w-full h-[400px] md:h-[500px] object-cover"
       loading="eager"
@@ -25,21 +25,20 @@ import Iskort from "../components/Iskort.astro";
     </div>
   </div>
   <!-- Intro og billeder -->
-  <section class="py-16 px-4 bg-gradient-to-b from-[var(--color-primary-content)] to-[var(--color-primary-accent)]">
+  <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         
         <!-- Venstre billedkort -->
-        <div class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] rounded-2xl bg-[var(--color-primary-content)]">
+        <div class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] rounded-2xl">
           <div class="relative w-full h-72 sm:h-96 lg:h-full">
             <img
-              src="/public/img/rabarberpindeis.webp"
+              src="/img/rabarberpindeis.webp"
               alt="To geder fra Tothaven"
               class="w-full h-full object-cover absolute inset-0"
               style="position: absolute; inset: 0;"
               loading="lazy"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/20 to-transparent opacity-0"></div>
           </div>
         </div>
 
@@ -48,9 +47,9 @@ import Iskort from "../components/Iskort.astro";
           <!-- gif ikon -->
           <div class="flex justify-center lg:justify-center md:justify-start mb-8">
             <div class="relative">
-              <div class="absolute inset-0 bg-green-100 rounded-full animate-pulse"></div>
+              <div class="absolute inset-0 bg-[var(--color-base-200)] rounded-full animate-pulse"></div>
               <img
-                src="/public/img/grisgrøn.gif"
+                src="/img/grisgrøn.gif"
                 alt="Animeret gris der springer"
                 class="relative w-32 h-32 md:w-40 md:h-40 object-contain mx-auto md:mx-0 lg:mx-auto filter drop-shadow-md"
                 loading="lazy"
@@ -94,13 +93,13 @@ import Iskort from "../components/Iskort.astro";
         <div class="rounded-2xl group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] bg-[var(--color-primary-content)]">
           <div class="relative w-full h-72 sm:h-96 lg:h-full">
             <img
-              src="/public/img/oste.webp"
+              src="/img/oste.webp"
               alt="Et får fra Tothaven"
               class="w-full h-full object-cover absolute inset-0"
               style="position: absolute; inset: 0;"
               loading="lazy"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/20 to-transparent opacity-0"></div>
+          
           </div>
         </div>
       </div>
@@ -110,7 +109,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Parallax Section 1 -->
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover flex items-center justify-center"
-    style="background-image: url('/public/img/mejeriprodukter.webp')"
+    style="background-image: url('/img/mejeriprodukter.webp')"
     role="img"
     aria-label="Mejeriprodukter baggrundsbillede"
   >
@@ -126,7 +125,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Om Mejeriet -->
   <Mejericard
     variant="beige"
-    image="/public/img/jakobmejeri.webp"
+    image="/img/jakobmejeri.webp"
     title="Velkommen til Tothavens lille gårdmejeri"
     content="På Tothavens gårdmejeri laver vi en mindre produktion af gedeoste, gedeyoghurt og pindeis – alt baseret på friskmalket mælk fra vores 15 geder. Vi malker fra april til november, hvor gederne går ude og spiser græs. To måneder før og efter kælving får gederne en velfortjent malkepause. Når kiddene er 3 måneder, flytter de ud på Melby overdrev, hvor de bidrager til naturpleje. Kun 50 meter fra stalden bliver mælken nænsomt pasteuriseret og forvandlet til fire forskellige oste, en drænet yoghurt og pindeis – både med gedemælk og som sorbet."
   />
@@ -134,7 +133,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Parallax Sektion 1 -->
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/malkerged.webp')"
+    style="background-image: url('/img/malkerged.webp')"
     role="img"
     aria-label="Mejeriproduktion baggrundsbillede"
   >
@@ -143,7 +142,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Is Sektion -->
   <Mejericard
     variant="green"
-    image="/public/img/pindeis.webp"
+    image="/img/pindeis.webp"
     title="GEDEMÆLKS PINDE-IS"
     content="Tothavens pindeis er inspireret af den italienske Gelato-tradition. Mælkeisene laver vi på basis af friskmalket mælk fra Tothavens geder, æggeblommer fra Tothavens æg, fløde fra Øllingegård og økologisk sukker fra de Lollandske roemarker. Sorbeterne er lavet af danske økologiske frugter og bær. Vi overtrækker alle isene med god økologisk chokolade fra de Hollandske chokoladekonger Original Beans. Alle vores pindeis laver vi i en stor og en lille udgave – så der både er til den store og lille is-sult."
   />
@@ -151,7 +150,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Parallax Sektion 2 -->
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover flex items-center justify-center"
-    style="background-image: url('/public/img/ispaaraekke.webp')"
+    style="background-image: url('/img/ispaaraekke.webp')"
     role="img"
     aria-label="Mejeriprodukter baggrundsbillede"
   >
@@ -165,10 +164,14 @@ import Iskort from "../components/Iskort.astro";
 
   <!-- Is smage kort sektion -->
 
+  <section class="py-16 px-4" aria-labelledby="ice-flavors-title">
 
+    <div class="max-w-7xl mx-auto">
+      <h2 id="ice-flavors-title" class="sr-only">Vores is smage</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+
         <Iskort
-          image="/public/img/lakridsis.webp"
+          image="/img/lakridsis.webp"
           title="Lakrids Gelato"
           description="Intens lakridsis lavet med lakridspulver fra ASA Spice, saltlakrids og et strejf citronskal. Overtrukket med hvid chokolade, der giver perfekt balance i smagen."
           bgColor="bg-gray-300"
@@ -176,7 +179,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/chokoladeis.webp"
+          image="/img/chokoladeis.webp"
           title="Chokolade Gelato"
           description="Friskmalket gedemælk og 65% økologisk mørk chokolade fra Original Beans i intens samklang. Isen er overtrukket med mørk chokolade og pyntet med fine striber af hvid chokolade."
           bgColor="bg-teal-700"
@@ -184,7 +187,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/hasselnodis.webp"
+          image="/img/hasselnodis.webp"
           title="Hasselnød Gelato"
           description="Friskmalket gedemælk og økologiske hasselnødder i skøn forening. Isen er overtrukket med en super lækker 42% mælkechokolade fra Original Beans."
           bgColor="bg-green-700"
@@ -192,7 +195,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/jordbaris.webp"
+          image="/img/jordbaris.webp"
           title="Jordbær Gelato"
           description="Sorbet på pind af lækre solmodne økologiske jordbær fra Ventegodtgård overtrukket med hvid øko chokolade."
           bgColor="bg-lime-100"
@@ -200,7 +203,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/karamelis.webp"
+          image="/img/karamelis.webp"
           title="Karamel Gelato"
           description="Cremet karamel gelato lavet på friskmalket gedemælk med rig karamelsmag. Overtrukket med mælkechokolade og drysset med havsalt."
           bgColor="bg-yellow-200"
@@ -208,7 +211,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/rabarberis.webp"
+          image="/img/rabarberis.webp"
           title="Rabarber/Hindbær Gelato"
           description="Smagen af Tothaven: Friskmalket gedemælk, bagte rabarber fra Tothavens rabarbermark og lidt hindbær pakket ind i økologisk hvid chokolade og drysset med frysetørrede rabarber."
           bgColor="bg-red-400"
@@ -216,7 +219,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/havtornis.webp"
+          image="/img/havtornis.webp"
           title="Havtorn Gelato"
           description="Lækker frisk mælkeis med en aromatisk smag af havtorn. Isen er overtrukket med hvid chokolade og drysset med hindbærstøv."
           bgColor="bg-pink-500"
@@ -224,7 +227,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/hyldeblomstis.webp"
+          image="/img/hyldeblomstis.webp"
           title="Hyldeblomst Gelato"
           description="Frisk sommer-is med økologiske hyldeblomster, friskpresset citron og citronskal og overtrukket med 65% mørk chokolade."
           bgColor="bg-violet-400"
@@ -232,7 +235,7 @@ import Iskort from "../components/Iskort.astro";
         />
 
         <Iskort
-          image="/public/img/solbaris.webp"
+          image="/img/solbaris.webp"
           title="Solbær Gelato"
           description="Solbær gelato med den lækre sommerlige sødme og syre fra friske solbær. Isen er overtrukket med hvid chokolade og drysset med solbærstøv."
           bgColor="bg-pink-100"
@@ -245,7 +248,7 @@ import Iskort from "../components/Iskort.astro";
   <!-- Parallax Sektion 3 -->
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/lakreis.webp')"
+    style="background-image: url('/img/lakreis.webp')"
     role="img"
     aria-label="Is på række baggrundsbillede"
   >
@@ -254,14 +257,14 @@ import Iskort from "../components/Iskort.astro";
   <!-- Oste Sektioner -->
   <Mejericard
     variant="beige"
-    image="/public/img/gedeost.webp"
+    image="/img/gedeost.webp"
     title="Prisvindende gedeost"
     content="Tothavens lille hvide er en blød, cremet hvidskimmelost lavet på frisk gedemælk, syrnet med kefir og modnet i glas. Den har en mild smag efter 2 uger og passer også til dem, der normalt ikke er til gedeost. Ved længere lagring udvikler den mere karakter og dybde. Osten blev kåret som bedste gedeost og fik en samlet 3. plads ved Nordisk Ostefestival 2019. Den var finalist til Gourmetprisen 2022 og har været omtalt i magasinet Ostekultur som en af '6 hotte oste netop nu'."
   />
 
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/ostesmagning.webp')"
+    style="background-image: url('/img/ostesmagning.webp')"
     role="img"
     aria-label="Malkegeder baggrundsbillede"
   >
@@ -269,14 +272,14 @@ import Iskort from "../components/Iskort.astro";
 
   <Mejericard
     variant="green"
-    image="/public/img/aftensol.webp"
+    image="/img/aftensol.webp"
     title="Kikhavns Aftensol"
     content="I 2023 er vi så småt gået i gang med at producere en fast ost med inspiration hentet både fra den hollandske Gouda, den danske Havarti og italienske bondeoste. Den er sat i en siciliansk kurveform der giver et smukt mønster i overfladen. Skorpen er helt naturlig og kan spises sammen med resten af osten. Denne ost vil være til salg i forskellige lagringsstadier fra 2 måneder op til 8 måneder."
   />
 
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/malkepat.webp')"
+    style="background-image: url('img/malkepat.webp')"
     role="img"
     aria-label="Geder på mark baggrundsbillede"
   >
@@ -284,14 +287,14 @@ import Iskort from "../components/Iskort.astro";
 
   <Mejericard
     variant="beige"
-    image="/public/img/krydder.webp"
+    image="/img/krydder.webp"
     title="Gedeost i Krydderolie"
     content="En dejlig frisk og syrlig ost som tager smag fra de krydderier den får selskab af i glasset. Vi laver denne ost i 3 varianter: Rosmarin, rosa peber og fennikel. Hvidløg, timian og tørret tomat og så en med enebær, rosmarin og blå kornblomst. Brug den på brød, i salaten eller i pastaretten."
   />
 
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/smukost.webp')"
+    style="background-image: url('/img/smukost.webp')"
     role="img"
     aria-label="Gedemad baggrundsbillede"
   >
@@ -299,14 +302,14 @@ import Iskort from "../components/Iskort.astro";
 
   <Mejericard
     variant="green"
-    image="/public/img/frisk.webp"
+    image="/img/frisk.webp"
     title="Pisket Friskost"
     content="En helt frisk og let drænet ost saltet med flagesalt. Denne ost producerer vi kun til engrossalg. Men du kan ofte smage den på Rarbarbergården i Holløse og Restaurant Knud i Hundested Havn."
   />
 
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/oste.webp')"
+    style="background-image: url('/img/oste.webp')"
     role="img"
     aria-label="Forskellige oste baggrundsbillede"
   >
@@ -314,14 +317,14 @@ import Iskort from "../components/Iskort.astro";
 
   <Mejericard
     variant="beige"
-    image="/public/img/yoghurt.webp"
+    image="/img/yoghurt.webp"
     title="Drænet Gedemælks Yoghurt"
     content="Vores drænede gedemælksyoghurt er en virkelig fed og tæt yoghurt som fungerer godt til morgenmaden men også i dressinger eller som erstatning for crème fraîche. Da vi dræner yoghurten helt ind til ca. 1/3 del så er literprisen også i den høje ende. Til gengæld behøver man kun ½ portion til morgenmaden for at blive mæt."
   />
 
   <div
     class="min-h-[300px] md:min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url('/public/img/gedmad.webp')"
+    style="background-image: url('/img/gedmad.webp')"
     role="img"
     aria-label="Gedemad baggrundsbillede"
   >
@@ -329,7 +332,7 @@ import Iskort from "../components/Iskort.astro";
 
   <Mejericard
     variant="green"
-    image="/public/img/karamelsovs.webp"
+    image="/img/karamelsovs.webp"
     title="Cajeta"
     content="Cajeta er den mexicanske version af Dulce de leche. Det er en specialitet som vi har lært at kende gennem vores chilenske ven Alex. Vi laver den ved at koge frisk gedemælk, sukker og vanilje ind til det bliver en lysebrun karamelliseret creme. Cajeta fungerer fortrinligt oven på den drænede gedemælksyoghurt, til dessert henover en vaniljeis, på pandekager eller i iskaffen som du kan smage på varme sommerdage i vores café. Vi laver Cajeta i 3 forskellige udgaver: Vanilje, Havsalt og Chokolade."
   />

@@ -14,7 +14,7 @@ import Heading from "../components/Heading.astro";
 <MainLayout title="Tothaven Besøgsgård">
   <div class="grid w-full">
     <img
-      src="/img/index.webp"
+      src="/img/heroindex1.png"
       alt="Pige og en gris"
       class="w-full h-auto object-cover col-start-1 row-start-1"
     />
@@ -34,7 +34,7 @@ import Heading from "../components/Heading.astro";
 
   <section class="md:flex p-5">
     <Forsidecard1
-      image="/public/img/goatlove.webp"
+      image="/img/kaninhold.webp"
       imagealt="To geder fra Tothaven"
       tekst="MØD TOTHAVENS DYR"
       url="/moddyrene"
@@ -42,7 +42,7 @@ import Heading from "../components/Heading.astro";
     />
 
     <Forsidecard2
-      image="/public/img/grisgrøn.gif"
+      image="/img/grisgrøn.gif"
       imagealt="grise gif"
       titel="BESØG TOTHAVEN"
       tekst="Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet her og glæd dig til en dag fyldt med nærvær, leg og læring i naturskønne omgivelser. Med en dagsbillet får du adgang til hele gården, hvor både børn og voksne kan hilse på alt fra grise og geder til æsler og kaniner."
@@ -50,7 +50,7 @@ import Heading from "../components/Heading.astro";
     />
 
     <Forsidecard1
-      image="/public/img/faar.webp"
+      image="/img/faar.webp"
       imagealt="Et får fra Tothaven"
       tekst="GÅRDMEJERIET"
       url="/gordmejeriet" 
@@ -58,50 +58,94 @@ import Heading from "../components/Heading.astro";
     />
   </section>
 
-  <section>
-    <div
-      class="w-full h-auto bg-[url('/img/kaniner.webp')] bg-cover bg-center"
-    >
-      <!-- Heading -->
-      <div class="text-center mb-16">
-        <h2 class="text-[var(--color-primary-content)]">
-          DET SIGER VORES GÆSTER
-        </h2>
+
+      
+
+
+<section class="relative py-20 overflow-hidden">
+  <!-- Background with parallax effect -->
+  <div class="absolute inset-0 bg-[url('/img/smukkalkun.webp')] bg-cover bg-center bg-fixed"></div>
+  <div class="relative container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-6xl font-bold text-[var(--color-primary-content)] mb-6 leading-tight">
+        Det Siger Vores <span class="text-[var(--color-accent)]">Gæster</span>
+      </h2>
+      
+      <!-- Overall rating display -->
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-8" style="font-family: 'Fredoka', sans-serif;">
+        <div class="flex items-center space-x-2">
+          <span class="text-3xl">⭐⭐⭐⭐⭐</span>
+          <span class="text-[var(--color-primary-content)] text-xl font-semibold">4.8/5</span>
+        </div>
+        <div class="text-[var(--color-primary-content)] text-lg">
+          Baseret på <span class="font-semibold text-[var(--color-accent)]">224</span> anmeldelser
+        </div>
       </div>
+      
+      <p class="text-[var(--color-primary-content)] text-lg max-w-2xl mx-auto leading-relaxed">
+        Se hvad vores besøgende siger om deres oplevelser på Tothaven
+      </p>
+    </div>
 
-      <div class="place-items-center lg:grid grid-cols-3 gap-2 m-4 p-4">
-        <Testemonial
-          titel="Karen Wolff"
-          stjerner="6"
-          anmeldelseid="anmeldelse1"
-        >
-          “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet
-          her og glæd dig til en dag fyldt med nærvær, leg og læring i
-          naturskønne omgivelser.”
-        </Testemonial>
+    <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <Testemonial
+        titel="Familien Grøn"
+        stjerner="5"
+        anmeldelseid="anmeldelse1"
+        date="15. maj 2024"
+  
+      >
+        En fantastisk oplevelse for hele familien! Børnene var helt vilde med at hilse på dyrene, og stemningen var så hyggelig og afslappende. Mejeriet var også et hit - friske produkter og muligheden for at se hvordan det hele foregår.
+      </Testemonial>
 
-        <Testemonial
-          titel="Phillip May"
-          stjerner="6"
-          anmeldelseid="anmeldelse2"
-        >
-          “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet
-          her og glæd dig til en dag fyldt med nærvær, leg og læring i
-          naturskønne omgivelser.”
-        </Testemonial>
+      <Testemonial
+        titel="Lotte Frederiksen"
+        stjerner="5"
+        anmeldelseid="anmeldelse2"
+        date="8. maj 2024"
+      >
+        Perfekt sted for en familiedag! Dyrene er velplejede og personalet er super venligt. Vi havde en dejlig dag med picnic på græsset mens børnene legede med kaninerne. Kommer helt sikkert tilbage!
+      </Testemonial>
 
-        <Testemonial
-          titel="Tim Christensen"
-          stjerner="6"
-          anmeldelseid="anmeldelse3"
-        >
-          “Vil du opleve Tothavens dyr og stemning helt tæt på? Køb din billet
-          her og glæd dig til en dag fyldt med nærvær, leg og læring i
-          naturskønne omgivelser.”
-        </Testemonial>
+      <Testemonial
+        titel="Søren Jensen"
+        stjerner="5"
+        anmeldelseid="anmeldelse3"
+        date="22. april 2024"
+      >
+        Mine børnebørn havde den bedste dag! Særligt grisene var populære, og det var så sødt at se dem fodre dyrene. Priserne er også meget rimelige. En rigtig god familieoplevelse!
+      </Testemonial>
+    </div>
+    
+    <!-- Call to action -->
+    <div class="flex flex-col items-center justify-center text-center mt-16">
+      <p class="text-[var(--color-primary-content)]/90 mb-6 text-lg">Vil du også dele din oplevelse?</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a 
+        href="" 
+        class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] font-semibold text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
+      >
+        Skriv en anmeldelse
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+      <a 
+        href="/biletter" 
+        class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] font-semibold text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
+      >
+        Book dit besøg
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
       </div>
     </div>
-  </section>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="whitespace-nowrap overflow-x-hidden py-4">
     <!-- Første sæt grise -->
@@ -195,7 +239,7 @@ import Heading from "../components/Heading.astro";
   </section>
 
   <section class="lg:px-30 py-10">
-    <div class="grid place-items-center">
+    <div class="grid place-items-center mb-8">
       <h4 class="text-[var(--color-primary)]">FØLG OS PÅ INSTAGRAM</h4>
       <Link1
         ><a
@@ -204,50 +248,44 @@ import Heading from "../components/Heading.astro";
         ></Link1
       >
     </div>
-
-    <section class="w-full overflow-hidden px-4 py-8">
-      <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <img
-          src="/public/img/gedkys.webp"
-          alt="En ged og en pige"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/lillefaar.webp"
-          alt="Lille får og kat"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/kat.webp"
-          alt="En kat"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/kobaggrund.webp"
-          alt="To køer på en mark"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/faar.webp"
-          alt="En lille får"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/hundgris.webp"
-          alt="En hund og en gris"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/miniaesler.webp"
-          alt="Mini æsel"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
-        <img
-          src="/public/img/kaniner.webp"
-          alt="Kaniner"
-          class="w-full aspect-[4/3] object-cover rounded"
-        />
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+  {[
+    { src: "/img/gedkys.webp", alt: "En ged og en pige" },
+    { src: "/img/lillefaar.webp", alt: "Lille får og kat" },
+    { src: "/img/kat.webp", alt: "En kat" },
+    { src: "/img/kobaggrund.webp", alt: "To køer på en mark" },
+    { src: "/img/faar.webp", alt: "Et lille får" },
+    { src: "/img/hundgris.webp", alt: "En hund og en gris" },
+    { src: "/img/miniaesler.webp", alt: "Mini æsel" },
+    { src: "/img/kaniner.webp", alt: "Kaniner" }
+  ].map((image, index) => (
+    <a
+      href="https://www.instagram.com/_tothaven_/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+      key={index}
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <p class="text-sm font-medium">{image.alt}</p>
       </div>
-    </section>
-  </section>
+    </a>
+  ))}
+</div>
+</div>
+</section>
 </MainLayout>
+<script>
+  import {
+    animate
+  } from "motion";
+  
+  // Initial page load animation
+  animate("body", { opacity: [0, 1] }, { duration: 0.5 });
+</script>

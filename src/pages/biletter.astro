@@ -6,12 +6,19 @@ import Billetcard from "../components/Billetcard.astro";
 ---
 
 <MainLayout title="Tothaven Billetter">
-  <div class="grid w-full">
+  <div class="relative w-full overflow-hidden">
     <img
-      src="/img/billetter.png"
-      alt="Pige og en gris"
-      class="w-full h-auto object-cover col-start-1 row-start-1"
+      src="/img/hero_billetter.webp"
+      alt="Tothaven Gårdmejeri hero billede"
+      class="w-full h-[400px] md:h-[500px] object-cover"
+      loading="eager"
     />
+    <div class="absolute bottom-12 left-12">
+      <h1 class="text-4xl md:text-6xl font-bold text-[var(--color-primary-content)]">
+        BILETTER OG ÅRSKORT
+      </h1>
+    </div>
+  </div>
 
     <div
       class="col-start-1 row-start-1 flex items-end p-4 text-[var(--color-primary-content)]"
@@ -534,7 +541,7 @@ import Billetcard from "../components/Billetcard.astro";
         class="text-[var(--color-primary)] grid grid-cols-1 md:grid-cols-3 gap-2 p-2 max-w-4xl mx-auto"
       >
         <img
-          src="../img/kort.png"
+          src="../img/kort.webp"
           alt="kort over tothaven"
           class="w-full h-auto md:col-span-2"
         />
@@ -553,3 +560,11 @@ import Billetcard from "../components/Billetcard.astro";
     }
   </style>
 </MainLayout>
+<script>
+  import {
+    animate
+  } from "motion";
+  
+  // Initial page load animation
+  animate("body", { opacity: [0, 1] }, { duration: 0.5 });
+</script>

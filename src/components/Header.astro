@@ -19,8 +19,8 @@ import Link1 from "./Link1.astro";
       style="background-color: var(--color-primary); color: var(--color-primary-content);"
     >
       <a href="/" aria-label="Gå til forsiden"><h3>TOTHAVEN</h3></a>
-      <button 
-        x-on:click="showmenu = !showmenu" 
+      <button
+        x-on:click="showmenu = !showmenu"
         aria-label="Åbn/luk navigation menu"
         :aria-expanded="showmenu"
       >
@@ -85,28 +85,53 @@ import Link1 from "./Link1.astro";
           class="flex flex-col gap-2 p-4 bg-[var(--color-primary)]"
           role="menu"
         >
-          <a href="/moddyrene" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none" role="menuitem">
+          <a
+            href="/moddyrene"
+            class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+            role="menuitem"
+          >
             Mød dyrene
           </a>
-          <a href="#" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none" role="menuitem">
+          <a
+            href="#"
+            class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+            role="menuitem"
+          >
             Alt det praktiske
           </a>
-          <a href="#" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none" role="menuitem">
+          <a
+            href="#"
+            class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+            role="menuitem"
+          >
             Mentor forløb
           </a>
-          <a href="#" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none" role="menuitem">
+          <a
+            href="#"
+            class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+            role="menuitem"
+          >
             Strikkeriet
           </a>
         </div>
       </div>
 
-      <a href="/gordmejeriet" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none">
+      <a
+        href="/gordmejeriet"
+        class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+      >
         Gårdmejeriet
       </a>
-      <a href="/produkter" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none">
+      <a
+        href="/produkter"
+        class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+      >
         Gårdens produkter
       </a>
-      <a href="/omos" class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none">
+      <a
+        href="/omos"
+        class="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none"
+      >
         Om os
       </a>
       <Link1 href="/biletter" variant="primary" size="xsmall">Køb billet</Link1>
@@ -124,7 +149,7 @@ import Link1 from "./Link1.astro";
 
       <!-- Dropdown Trigger -->
       <div class="relative flex items-center">
-        <button 
+        <button
           style="font-family: Fredoka, sans-serif;"
           @click="open = !open"
           @keydown.escape="open = false"
@@ -162,29 +187,29 @@ import Link1 from "./Link1.astro";
           <div class="3xl mx-auto grid grid-cols-3 gap-4 p-4 items-center">
             <!-- Left: Links -->
             <div class="col-span-1 p-4 grid grid-cols-1 gap-2 text-left">
-              <a 
-                href="/moddyrene" 
+              <a
+                href="/moddyrene"
                 class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
                 role="menuitem"
               >
                 <h2>Mød dyrene</h2>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
                 role="menuitem"
               >
                 <h2>Alt det praktiske</h2>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
                 role="menuitem"
               >
                 <h2>Mentor forløb</h2>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
                 role="menuitem"
               >
@@ -209,19 +234,19 @@ import Link1 from "./Link1.astro";
         </div>
       </div>
 
-      <a 
+      <a
         href="/gordmejeriet"
         class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
       >
         Gårdmejeriet
       </a>
-      <a 
+      <a
         href="#"
         class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
       >
         Gårdens produkter
       </a>
-      <a 
+      <a
         href="/omos"
         class="transition-colors duration-300 hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-2 py-1"
       >

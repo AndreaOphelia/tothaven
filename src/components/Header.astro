@@ -160,12 +160,11 @@ import Link1 from "./Link1.astro";
             x-show="open"
             @click.away="open = false"
             x-transition
-            class="absolute top-full bg-[var(--color-primary)] shadow-lg mt-4 flex z-50 w-4xl p-4"
-            class="absolute left-0 right-0 top-full bg-[var(--color-primary)] shadow-lg mt-4 flex z-50 p-4 min-w-xl"
+            class="absolute top-full bg-[var(--color-primary)] shadow-lg mt-4 flex z-50 w-xl"
           >
             <!-- Links -->
-            <div class="p-4 grid grid-cols-1 gap-2">
-              <div class="w-1/2 p-4 grid grid-cols-1 gap-2">
+            <div class="p- grid grid-cols-1 gap-2">
+              <div class="w-1/2 p-4 grid grid-cols-1 gap-">
                 <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
                   ><h2>Mød dyrene</h2></a
                 >
@@ -182,11 +181,11 @@ import Link1 from "./Link1.astro";
             </div>
 
             <!-- Billede -->
-            <div class="w-1/2">
+            <div class="w-full">
               <img
                 src="../img/kaniner.webp"
                 alt="Gårdbillede"
-                class="w-full h-full object-cover"
+                class="object-cover"
               />
             </div>
           </div>

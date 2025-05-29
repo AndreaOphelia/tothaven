@@ -1,173 +1,208 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
-import Dyrecard from "../components/Dyrecard.astro"
-import Iskort from "../components/Iskort.astro"
-import Heading from "../components/Heading.astro"
+import MainLayout from "../layouts/MainLayout.astro";
+import Dyrecard from "../components/Dyrecard.astro";
+import Iskort from "../components/Iskort.astro";
+import Heading from "../components/Heading.astro";
 import Link1 from "../components/Link1.astro";
 ---
 
-
 <MainLayout>
   <div class="relative w-full overflow-hidden mb-12">
-    <img src="/img/hero_moddyrene.webp" alt="En pige og en gris" class="w-full" />
+    <img
+      src="/img/hero_moddyrene.webp"
+      alt="En pige og en gris"
+      class="w-full"
+    />
     <div class="absolute bottom-12 left-12">
       <h1 class="text-[var(--color-primary-content)]">MØD DYRENE</h1>
-    </div> 
+    </div>
   </div>
-    
 
-    <section class="max-w-5xl mx-auto">
-        <div class="mb-4 px-10">
-            <h3 class="text-[var(--color-primary)] mb-8">TOTHAVENS DYR</h3>
-            <div class="grid grid-cols-3">
-                <p class="text-[var(--color-primary)] col-span-2">På Tothaven er vi glade for dyr… og dyrene er vist også glade for Tothaven…  Neden for kan du læse om de dyr du kan møde på Tothavens Besøgsgård.</p>
-                <div class="grid place-self-end col-span-1">
-                  
-                  <button class="w-15 h-15 md:w-20 md:h-20 rounded-full" style="background-color: var(--color-accent);"> 
-                    <div x-data="{ toggled: false }" class="grid place-self-center text-[var(--color-primary-content)] cursor-pointer" @click="toggled = !toggled">
-                      <template x-if="!toggled">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                          <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z" />
-                          <path d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z" />
-                        </svg>
-                        
-                      </template>
-                    
-                      <template x-if="toggled">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                          <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM17.78 9.22a.75.75 0 1 0-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 1 0 1.06-1.06L20.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-1.72 1.72-1.72-1.72Z" />
-                        </svg>
-                      </template>
-                    </div>
-                    
-                  </button>
-                </div>
-            </div>
-        </div>
-      </section>
-        
-        <section class="grid justify-center">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:max-w-7xl mx-auto py-16 px-4 ">
-           <Dyrecard 
-            image="/img/grislinger.webp" 
-            imagealt="Kune Kune grise" 
-            titel="Kune Kune Grise"
-            backtitle="Kune Kune Grise"
-            backtext="Vores små, tamme grise fra New Zealand elsker mennesker og kommer tæt på. De græsser i stedet for at rode, og hvert forår og sommer får vi nye kuld. Kune Kune betyder “fed og rund” på maori – og det passer perfekt!"
-            sound="/sounds/gris.mp3"
-            />
-            
-            <Dyrecard 
-            image="/img/miniaeslerne.webp" 
-            imagealt="Miniæsel" 
-            titel="Miniature Æsler"
-            backtitle="Miniature Æsler"
-            backtext="I 2021 flyttede miniatureæslene Tom og Knut ind på Tothaven. De er nysgerrige og nuttede – og tit dem, der tager imod jer ved indgangen. Deres “storesøster” Marie har boet her siden 2017, hvor Andrea fik hende i 10-års gave."
-            sound="/sounds/aesel.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/honemor.webp" 
-            imagealt="Høns" 
-            titel="Høns"
-            backtitle="Høns"
-            backtext="På Tothaven er de fleste af dyrene her mest for hyggens skyld og fordi vi bare synes at det er rigtigt sjovt at have husdyr og give dem et godt og værdigt liv. Men der er et par af dyreflokkene som ikke kun er her for at hygge med, men som også har et job. Det er gederne der laver mælk til os og hønsene der lægger æg."
-            sound="/sounds/hons.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/kedekid.webp" 
-            imagealt="Malkegeder" 
-            titel="Malkegeder"
-            backtitle="Malkegeder"
-            backtext="Vores geder giver os mælk, kød og smukke skind – og dermed også ost, is og yoghurt. De elsker at gnaske bark og nåle fra lokale fyrretræer, især om vinteren. I 2019 åbnede vi et lille gårdmejeri, hvor I kan smage vores egne mejeriprodukter – direkte fra gederne på marken."
-            sound="/sounds/ged.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/kaninmis.webp" 
-            imagealt="Kaniner" 
-            titel="Kaniner"
-            backtitle="Kaniner"
-            backtext="Kaninerne på gården leverer i sommerhalvåret en lind strøm af små søde kaninunger, som gårdens besøgende kan få lov at kæle med. Det er en blanding af løvehoved og dværgkanin som er super søde og bløde.">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/blacknose.webp" 
-            imagealt="Valais Får" 
-            titel="Valais Får"
-            backtitle="Valais Får"
-            backtext="Valais fårene Jørgen og Lilly flyttede ind på Tothaven i 2022. De er Tothavens første får, og vi håber at de med tiden kan velsigne os med lam. Pelsen fra fårene bliver brugt til at filte de små Tothaven-filtdyr, som kan købes i vores butik."
-            sound="/sounds/faar.mp3"
+  <section class="max-w-5xl mx-8">
+    <div class="mb-4 px-8">
+      <h3 class="text-[var(--color-primary)] mb-8">TOTHAVENS DYR</h3>
+      <div class="grid grid-cols-3">
+        <p class="text-[var(--color-primary)] col-span-2">
+          På Tothaven er vi glade for dyr… og dyrene er vist også glade for
+          Tothaven… Neden for kan du læse om de dyr du kan møde på Tothavens
+          Besøgsgård.
+        </p>
+        <div class="grid place-self-end col-span-1">
+          <button
+            class="w-15 h-15 md:w-20 md:h-20 rounded-full"
+            style="background-color: var(--color-accent);"
+          >
+            <div
+              x-data="{ toggled: false }"
+              class="grid place-self-center text-[var(--color-primary-content)] cursor-pointer"
+              @click="toggled = !toggled"
             >
+              <template x-if="!toggled">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z"
+                  ></path>
+                  <path
+                    d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z"
+                  ></path>
+                </svg>
+              </template>
 
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/dexter.webp" 
-            imagealt="Dexter kvæg" 
-            titel="Dexter kvæg"
-            backtitle="Dexter kvæg"
-            backtext="I foråret 2023 flyttede kalvene Sanne og Luna ind. Sanne er ren Dexter, og Luna er halvt Jersey. Dexter-kvæg er en af verdens mindste racer og bliver sjældent over en meter høje. De stammer fra Irland og blev kaldt “fattigmandskøer” – men her hos os er de bare elskede!"
-            sound="/sounds/ko.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/lobeand.webp" 
-            imagealt="Løbeænder" 
-            titel="Løbeænder"
-            backtitle="Løbeænder"
-            backtext="Løbeænder har vi også på Tothaven. De marcherer i takt og snakker meget. De har en sjov opretstående figur, der får dem til at minde om en lille militær enhed, når de kommer trampende forbi. Løbeænder kommer oprindeligt fra asien hvor de er blevet brugt igennem århundreder til sneglebekæmpelse i markerne."
-            sound="/sounds/and.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/smukkalkun.webp" 
-            imagealt="Kalkuner" 
-            titel="Kalkuner"
-            backtitle="Kalkuner"
-            backtext="Konrad, Connie og Katrine er vores altid sultne kalkuner. De går ofte frit omkring og kagler løs.  Kalkunerne er fredelige, men nysgerrrige, og vil meget gerne følge med i alt vi går og roder i på gården, og står døren åben, vader de gerne indenfor."
-            sound="/sounds/kalkun.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/ponyer.webp" 
-            imagealt="Ponyer" 
-            titel="Ponyer"
-            backtitle="Ponyer"
-            backtext="Vi har 7 ponyer – og de er faktisk grunden til, at vi købte Tothaven! Når besøgsgården er åben, kan I møde dem til hyggelige trækture. Til hverdag er de vores kloge og rolige terapiheste for børn og unge med angst, autisme og andre udfordringer."
-            sound="/sounds/hest.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/hundgris.webp" 
-            imagealt="Hunde" 
-            titel="Hunde"
-            backtitle="Hunde"
-            backtext="Pirjo (Border Collie) og Chilli (Australian Shepherd) passer godt på Tothaven – de holder ræven væk og patruljerer døgnet rundt. Når vi har åbent, får de pause fra vagten. Af og til får vi hvalpe, som elsker besøg! Sidste år blev én boende: spilopmageren Pippi."
-            sound="/sounds/hund.mp3">
-            </Dyrecard>
-
-            <Dyrecard 
-            image="/img/killinger.webp" 
-            imagealt="Katte" 
-            titel="Katte"
-            backtitle="Katte"
-            backtext="Kattene Siv, Nif, Mette og Mymle holder gården rottefri og musebestanden i ave. Og så sørger de for en lind strøm af lækre langhårede killinger."
-            sound="/sounds/kat.mp3">
-            </Dyrecard>
+              <template x-if="toggled">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM17.78 9.22a.75.75 0 1 0-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 1 0 1.06-1.06L20.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-1.72 1.72-1.72-1.72Z"
+                  ></path>
+                </svg>
+              </template>
+            </div>
+          </button>
         </div>
-      </section>
-      
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-8 mx-8 lg:mx-16 py-16 justify-self-center"
+    >
+      <Dyrecard
+        image="/img/grislinger.webp"
+        imagealt="Kune Kune grise"
+        titel="Kune Kune Grise"
+        backtitle="Kune Kune Grise"
+        backtext="Vores små, tamme grise fra New Zealand elsker mennesker og kommer tæt på. De græsser i stedet for at rode, og hvert forår og sommer får vi nye kuld. Kune Kune betyder “fed og rund” på maori – og det passer perfekt!"
+        sound="/sounds/gris.mp3"
+      />
+
+      <Dyrecard
+        image="/img/miniaeslerne.webp"
+        imagealt="Miniæsel"
+        titel="Miniature Æsler"
+        backtitle="Miniature Æsler"
+        backtext="I 2021 flyttede miniatureæslene Tom og Knut ind på Tothaven. De er nysgerrige og nuttede – og tit dem, der tager imod jer ved indgangen. Deres “storesøster” Marie har boet her siden 2017, hvor Andrea fik hende i 10-års gave."
+        sound="/sounds/aesel.mp3"
+      />
+
+      <Dyrecard
+        image="/img/honemor.webp"
+        imagealt="Høns"
+        titel="Høns"
+        backtitle="Høns"
+        backtext="På Tothaven er de fleste af dyrene her mest for hyggens skyld og fordi vi bare synes at det er rigtigt sjovt at have husdyr og give dem et godt og værdigt liv. Men der er et par af dyreflokkene som ikke kun er her for at hygge med, men som også har et job. Det er gederne der laver mælk til os og hønsene der lægger æg."
+        sound="/sounds/hons.mp3"
+      />
+
+      <Dyrecard
+        image="/img/kedekid.webp"
+        imagealt="Malkegeder"
+        titel="Malkegeder"
+        backtitle="Malkegeder"
+        backtext="Vores geder giver os mælk, kød og smukke skind – og dermed også ost, is og yoghurt. De elsker at gnaske bark og nåle fra lokale fyrretræer, især om vinteren. I 2019 åbnede vi et lille gårdmejeri, hvor I kan smage vores egne mejeriprodukter – direkte fra gederne på marken."
+        sound="/sounds/ged.mp3"
+      />
+
+      <Dyrecard
+        image="/img/kaninmis.webp"
+        imagealt="Kaniner"
+        titel="Kaniner"
+        backtitle="Kaniner"
+        backtext="Kaninerne på gården leverer i sommerhalvåret en lind strøm af små søde kaninunger, som gårdens besøgende kan få lov at kæle med. Det er en blanding af løvehoved og dværgkanin som er super søde og bløde."
+      />
+
+      <Dyrecard
+        image="/img/blacknose.webp"
+        imagealt="Valais Får"
+        titel="Valais Får"
+        backtitle="Valais Får"
+        backtext="Valais fårene Jørgen og Lilly flyttede ind på Tothaven i 2022. De er Tothavens første får, og vi håber at de med tiden kan velsigne os med lam. Pelsen fra fårene bliver brugt til at filte de små Tothaven-filtdyr, som kan købes i vores butik."
+        sound="/sounds/faar.mp3"
+      />
+
+      <Dyrecard
+        image="/img/dexter.webp"
+        imagealt="Dexter kvæg"
+        titel="Dexter kvæg"
+        backtitle="Dexter kvæg"
+        backtext="I foråret 2023 flyttede kalvene Sanne og Luna ind. Sanne er ren Dexter, og Luna er halvt Jersey. Dexter-kvæg er en af verdens mindste racer og bliver sjældent over en meter høje. De stammer fra Irland og blev kaldt “fattigmandskøer” – men her hos os er de bare elskede!"
+        sound="/sounds/ko.mp3"
+      />
+
+      <Dyrecard
+        image="/img/lobeand.webp"
+        imagealt="Løbeænder"
+        titel="Løbeænder"
+        backtitle="Løbeænder"
+        backtext="Løbeænder har vi også på Tothaven. De marcherer i takt og snakker meget. De har en sjov opretstående figur, der får dem til at minde om en lille militær enhed, når de kommer trampende forbi. Løbeænder kommer oprindeligt fra asien hvor de er blevet brugt igennem århundreder til sneglebekæmpelse i markerne."
+        sound="/sounds/and.mp3"
+      />
+
+      <Dyrecard
+        image="/img/smukkalkun.webp"
+        imagealt="Kalkuner"
+        titel="Kalkuner"
+        backtitle="Kalkuner"
+        backtext="Konrad, Connie og Katrine er vores altid sultne kalkuner. De går ofte frit omkring og kagler løs.  Kalkunerne er fredelige, men nysgerrrige, og vil meget gerne følge med i alt vi går og roder i på gården, og står døren åben, vader de gerne indenfor."
+        sound="/sounds/kalkun.mp3"
+      />
+
+      <Dyrecard
+        image="/img/ponyer.webp"
+        imagealt="Ponyer"
+        titel="Ponyer"
+        backtitle="Ponyer"
+        backtext="Vi har 7 ponyer – og de er faktisk grunden til, at vi købte Tothaven! Når besøgsgården er åben, kan I møde dem til hyggelige trækture. Til hverdag er de vores kloge og rolige terapiheste for børn og unge med angst, autisme og andre udfordringer."
+        sound="/sounds/hest.mp3"
+      />
+
+      <Dyrecard
+        image="/img/hundgris.webp"
+        imagealt="Hunde"
+        titel="Hunde"
+        backtitle="Hunde"
+        backtext="Pirjo (Border Collie) og Chilli (Australian Shepherd) passer godt på Tothaven – de holder ræven væk og patruljerer døgnet rundt. Når vi har åbent, får de pause fra vagten. Af og til får vi hvalpe, som elsker besøg! Sidste år blev én boende: spilopmageren Pippi."
+        sound="/sounds/hund.mp3"
+      />
+
+      <Dyrecard
+        image="/img/killinger.webp"
+        imagealt="Katte"
+        titel="Katte"
+        backtitle="Katte"
+        backtext="Kattene Siv, Nif, Mette og Mymle holder gården rottefri og musebestanden i ave. Og så sørger de for en lind strøm af lækre langhårede killinger."
+        sound="/sounds/kat.mp3"
+      />
+    </div>
+  </section>
+
   <!-- Call to Action Section -->
   <section class="relative py-16 px-4 overflow-hidden">
     <!-- Parallax background -->
-    <div class="absolute inset-0 bg-[url('/img/kobaggrund.webp')] bg-cover bg-center bg-fixed pointer-events-none"></div>
-    <div class="relative max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
-      <h3 class="text-3xl md:text-4xl font-bold text-[var(--color-primary-content)] mb-4 drop-shadow-lg">
+    <div
+      class="absolute inset-0 bg-[url('/img/kobaggrund.webp')] bg-cover bg-center bg-fixed pointer-events-none"
+    >
+    </div>
+    <div
+      class="relative max-w-4xl mx-auto text-center flex flex-col items-center justify-center"
+    >
+      <h3
+        class="text-3xl md:text-4xl font-bold text-[var(--color-primary-content)] mb-4 drop-shadow-lg"
+      >
         Kom og besøg os på Tothaven!
       </h3>
-      <p class="text-lg md:text-xl mb-8 text-[var(--color-primary-content)] opacity-90 max-w-2xl mx-auto">
+      <p
+        class="text-lg md:text-xl mb-8 text-[var(--color-primary-content)] opacity-90 max-w-2xl mx-auto"
+      >
         Mød alle vores skønne dyr og oplev gårdslivet på nært hold.
       </p>
       <a
@@ -185,8 +220,7 @@ import Link1 from "../components/Link1.astro";
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M9 5l7 7-7 7"
-          ></path>
+            d="M9 5l7 7-7 7"></path>
         </svg>
       </a>
     </div>
@@ -229,41 +263,44 @@ import Link1 from "../components/Link1.astro";
 
 <script>
   import { animate } from "motion";
-  
+
   // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
-  
-  // Stagger animation for animal cards
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.dyrecard');
-    
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          animate(
-            entry.target,
-            { 
-              opacity: [0, 1], 
-              y: [50, 0],
-              scale: [0.9, 1]
-            },
-            { 
-              duration: 0.6,
-              delay: index * 0.1,
-              easing: "ease-out"
-            }
-          );
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
 
-    cards.forEach(card => {
-      card.style.opacity = '0';
+  // Stagger animation for animal cards
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".dyrecard");
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            animate(
+              entry.target,
+              {
+                opacity: [0, 1],
+                y: [50, 0],
+                scale: [0.9, 1],
+              },
+              {
+                duration: 0.6,
+                delay: index * 0.1,
+                easing: "ease-out",
+              }
+            );
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    cards.forEach((card) => {
+      card.style.opacity = "0";
       observer.observe(card);
     });
   });

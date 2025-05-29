@@ -30,12 +30,12 @@ const { image, title, description, bgColor, textColor } = Astro.props;
     onclick="this.querySelector('.card').classList.toggle('flipped')">
     <div class="card relative w-full h-full">
       <!-- Front -->
-      <div class="card-face absolute w-full h-full rounded-xl overflow-hidden shadow-xl">
+      <div class="card-face absolute w-full h-full rounded-xl overflow-hidden">
         <img src={image} alt={title} class="w-full h-full object-cover" />
       </div>
       <!-- Back -->
-      <div class={`card-face card-back absolute w-full h-full ${bgColor} ${textColor} rounded-xl p-4 flex flex-col justify-center items-start text-left shadow-xl`}>
-        <h2 class="text-xl font-bold mb-2">{title}</h2>
+      <div class={`card-face card-back absolute w-full h-full ${bgColor} ${textColor} rounded-xl p-4 flex flex-col justify-center items-start text-left`}>
+        <h3 class="text-xl font-bold mb-2">{title}</h3>
         <p class="text-sm">{description}</p>
       </div>
     </div>

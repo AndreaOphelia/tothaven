@@ -1,18 +1,20 @@
 ---
-const { image = "", imagealt = "", tekst = "", url="", content="" } = Astro.props;
+const { image = "", imagealt = "", tekst = "", url="", content="" , showOverlay = true } = Astro.props;
 import Link1 from "./Link1.astro";
 ---
 
 <div class="relative w-full h-auto overflow-hidden p-1">
   <img src={image} alt={imagealt} class="w-full h-full object-cover" />
 
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div
-      class="text-[var(--color-primary-content)] text-center p-4 rounded-xl w-3/4 max-w-sm opacity-90"
-      style="background-color: var(--color-primary);"
-    >
-      <h4 class="text-[var(--color-primary-content)]">{tekst}</h4>
-      <Link1 href={url} variant="textlink" class="mt-1">{content}</Link1>
+  {showOverlay &&
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div
+        class="text-[var(--color-primary-content)] text-center p-4 rounded-xl w-3/4 max-w-sm opacity-90"
+        style="background-color: var(--color-primary);"
+      >
+        <h4 class="text-[var(--color-primary-content)]">{tekst}</h4>
+        <Link1 href={url} variant="textlink" class="mt-1">{content}</Link1>
+      </div>
     </div>
-  </div>
+  }
 </div>

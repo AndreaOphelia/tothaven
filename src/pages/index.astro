@@ -134,42 +134,33 @@ import Heading from "../components/Heading.astro";
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a
-            href=""
-            class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
-          >
-            Skriv en anmeldelse
-            <svg
-              class="ml-2 w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-          <a
-            href="/biletter"
-            class="inline-flex items-center px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-primary-content)] transition-all duration-300 transform rounded-2xl"
-          >
-            Book dit besøg
-            <svg
-              class="ml-2 w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
+        <Link1 href="#" target="_self" variant="secondary" size="small">Skriv en anmeldelse <svg
+          class="ml-2 w-4 h-4 inline-block"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"></path>
+        </svg>
+        </Link1>
+
+        <Link1 href="/biletter" target="_self" variant="secondary" size="small">Book dit besøg<svg
+          class="ml-2 w-4 h-4 inline-block"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"></path>
+        </svg>
+        </Link1>
         </div>
       </div>
     </div>

@@ -4,13 +4,13 @@ const { href="#" , target="_self" , variant= "", size = "" } = Astro.props;
  
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
 
-const linkStyling = "cursor-pointer text-[var(--color-primary-content)] font-['Fredoka']"; 
+const linkStyling = "cursor-pointer text-[var(--color-primary-content)] font-['Fredoka'] transition duration-200 hover:animate-pulse"; 
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
 const variantClasses = {
 "textlink": "underline",
-"primary": "uppercase border-4 rounded-2xl p-2 m-2 text-bold bg-[var(--color-accent)] text-[var(--color-accent-content)] hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)] font-['LilitaOne']",
-"secondary": "rounded-2xl p-3 m-3 text-bold bg-[var(--color-primary)] text-[var(--color-primary-content)] hover:bg-[var(--color-accent)]"
+"primary": "uppercase border-4 rounded-2xl p-2 m-2 text-bold bg-[var(--color-accent)] text-[var(--color-accent-content)] hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)] font-['LilitaOne'] transition duration-200 hover:animate-pulse",
+"secondary": "rounded-2xl p-3 m-3 text-bold bg-[var(--color-primary)] text-[var(--color-primary-content)] hover:bg-[var(--color-accent)] hover:animate-pulse transition duration-200"
 };
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.

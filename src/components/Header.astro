@@ -118,7 +118,7 @@ import Link1 from "./Link1.astro";
       <div class="relative">
         <button
           @click="open = !open"
-          class="flex items-center gap-1 focus:outline-none hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+          class="flex items-center gap-1 focus:outline-none hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)] transition duration-200"
         >
           <p>Udforsk gården</p>
           <svg
@@ -145,16 +145,16 @@ import Link1 from "./Link1.astro";
         >
           <!-- Links -->
           <div class="w-1/2 p-4 grid grid-cols-1 gap-2">
-            <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            <a href="/moddyrene" class="hover:text-[var(--color-accent)] transition duration-200"
               ><h2>Mød dyrene</h2></a
             >
-            <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            <a href="/moddyrene" class="hover:text-[var(--color-accent)] transition duration-200"
               ><h2>Alt det praktiske</h2></a
             >
-            <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            <a href="/moddyrene" class="hover:text-[var(--color-accent)] transition duration-200"
               ><h2>Mentor forløb</h2></a
             >
-            <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            <a href="/moddyrene" class="hover:text-[var(--color-accent)] transition duration-200"
               ><h2>Strikkeriet</h2></a
             >
           </div>
@@ -172,17 +172,17 @@ import Link1 from "./Link1.astro";
 
       <a
         href="/gordmejeriet"
-        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)] transition duration-200"
         >Gårdmejeriet</a
       >
       <a
         href="#"
-        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)] transition duration-200"
         >Gårdens produkter</a
       >
       <a
         href="/omos"
-        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)] transition duration-200"
         >Om os</a
       >
       <Link1 href="/biletter" variant="primary" size="small">Køb billet</Link1>

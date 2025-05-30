@@ -6,16 +6,16 @@ const { variant = "primary", size = "medium" } = Astro.props;
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
 
 const buttonStyling =
-  "cursor-pointer uppercase rounded-2xl p-2 m-2 text-bold hover:animate-pulse font-['LilitaOne']";
+  "cursor-pointer uppercase rounded-2xl p-2 m-2 text-bold hover:animate-pulse font-['LilitaOne'] transition duration-200";
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
 
 const variantClasses = {
   primary:
-    "border-4 bg-[var(--color-accent)] text-[var(--color-accent-content)] hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)]",
+    "border-4 bg-[var(--color-accent)] text-[var(--color-accent-content)] hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)] transition duration-200",
 
   secondary:
-    "bg-transparent text-[var(--color-accent)] border-4 border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-[var(--color-accent-content)]",
+    "bg-transparent text-[var(--color-accent)] border-4 border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-[var(--color-accent-content)] transition duration-200",
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.

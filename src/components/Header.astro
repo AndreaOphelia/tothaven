@@ -2,55 +2,57 @@
 import Link1 from "./Link1.astro";
 ---
 
-<div x-data="{ showmenu: false }">
-  <!-- Include Alpine.js -->
-  <script src="//unpkg.com/alpinejs" defer></script>
+<!-- Include Alpine.js -->
+<script src="//unpkg.com/alpinejs" defer></script>
 
-  <div x-data="{ showmenu: false, open: false }">
-    <header>
-      <!-- Åbningstider -->
-      <div class="text-center p-2">
-        <p class="max-w-full" style="color: var(--color-primary);">
-          Åbningstider i dag - 8.00-16.00
-        </p>
-      </div>
+<div x-data="{ showmenu: false, open: false }">
+  <header>
+    <!-- Åbningstider -->
+    <div class="text-center p-2">
+      <p class="max-w-full" style="color: var(--color-primary);">
+        Åbningstider i dag - 8.00-16.00
+      </p>
+    </div>
 
-      <!-- burgermenu -->
-      <!-- Mobil topbar -->
-      <div
-        class="flex justify-between items-center p-2 md:hidden"
-        style="background-color: var(--color-primary); color: var(--color-primary-content);"
-      >
-        <a href="/"><h3>TOTHAVEN</h3></a>
-        <button x-on:click="showmenu = !showmenu" aria-label="Toggle menu">
-          <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+    <!-- Mobil topbar -->
+    <div
+      class="flex justify-between items-center p-2 md:hidden"
+      style="background-color: var(--color-primary); color: var(--color-primary-content);"
+    >
+      <a href="/"><h3>TOTHAVEN</h3></a>
+      <button x-on:click="showmenu = !showmenu" aria-label="Toggle menu">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
 
-      <!-- burgermenu -->
-      <!-- Mobil menu -->
-      <nav
-        x-show="showmenu"
-        x-transition
-        x-on:click.outside="showmenu = false"
-        class="flex flex-col gap-2 p-4 md:hidden text-center"
-        class="flex flex-col gap-2 p-4 text-center md:hidden"
-        style="background-color: var(--color-primary); color: var(--color-primary-content);"
-      >
-        <a href="/">TOTHAVEN</a>
-        <a class="flex justify-center items-center gap-1" href="#">
-          Udforsk gården
+    <!-- Mobil menu -->
+    <nav
+      x-show="showmenu"
+      x-transition
+      x-on:click.outside="showmenu = false"
+      class="flex flex-col gap-2 p-4 text-center md:hidden"
+      style="background-color: var(--color-primary); color: var(--color-primary-content);"
+    >
+      <a href="/">TOTHAVEN</a>
+
+      <!-- Mobil dropdown -->
+      <div>
+        <button
+          class="flex justify-center items-center gap-1 w-full hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+          @click="open = !open"
+        >
+          <p class="">Udforsk gården</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -58,145 +60,132 @@ import Link1 from "./Link1.astro";
             stroke-width="1.5"
             stroke="currentColor"
             class="w-5 h-5"
-            <!--
-            Mobil
-            dropdown
-            --
           >
-            <div>
-              <button
-                class="flex justify-center items-center gap-1 w-full"
-                @click="open = !open"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-              </button>
-            </div>
-            Udforsk gården
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-            </svg>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
+        </button>
 
-          <div
-            x-show="open"
-            x-transition
-            class="flex flex-col gap-2 p-4 bg-[var(--color-primary)]"
+        <div
+          x-show="open"
+          x-transition
+          class="flex flex-col gap-2 p-4 bg-[var(--color-primary)]"
+        >
+          <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            >Mød dyrene</a
           >
+          <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            >Alt det praktiske</a
+          >
+          <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            >Mentor forløb</a
+          >
+          <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
+            >Strikkeriet</a
+          >
+        </div>
+      </div>
+
+      <a
+        href="/gordmejeriet"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >Gårdmejeriet</a
+      >
+      <a
+        href="#"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >Gårdens produkter</a
+      >
+      <a
+        href="/omos"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >Om os</a
+      >
+      <Link1 href="/biletter" variant="primary" size="xsmall">Køb billet</Link1>
+    </nav>
+
+    <!-- Desktop navbar -->
+    <nav
+      class="hidden md:flex text-[var(--color-primary-content)] p-2 justify-evenly items-center"
+      style="background-color: var(--color-primary);"
+      x-data="{ open: false }"
+    >
+      <a href="/"><h3>TOTHAVEN</h3></a>
+
+      <!-- Dropdown Trigger -->
+      <div class="relative">
+        <button
+          @click="open = !open"
+          class="flex items-center gap-1 focus:outline-none hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >
+          <p>Udforsk gården</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+          </svg>
+        </button>
+
+        <!-- Desktop dropdown -->
+        <div
+          x-show="open"
+          @click.away="open = false"
+          x-transition
+          class="absolute -left-[200px] right-0 top-full bg-[var(--color-primary)] mt-4 flex z-50 p-4 md:w-3xl xl:w-5xl"
+        >
+          <!-- Links -->
+          <div class="w-1/2 p-4 grid grid-cols-1 gap-2">
             <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-              >Mød dyrene</a
+              ><h2>Mød dyrene</h2></a
             >
             <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-              >Alt det praktiske</a
+              ><h2>Alt det praktiske</h2></a
             >
             <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-              >Mentor forløb</a
+              ><h2>Mentor forløb</h2></a
             >
             <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-              >Strikkeriet</a
+              ><h2>Strikkeriet</h2></a
             >
           </div>
-        </a>
 
-        <a href="/gordmejeriet">Gårdmejeriet</a>
-        <a href="#">Gårdens produkter</a>
-        <a href="/omos">Om os</a>
-        <Link1 href="/biletter" variant="primary" size="xsmall"
-          >Køb billet</Link1
-        >
-      </nav>
-
-      <!-- normal menu -->
-      <!-- Include Alpine.js -->
-      <script src="//unpkg.com/alpinejs" defer></script>
-
-      <!-- Navbar -->
-      <!-- Desktop navbar -->
-      <nav
-        class="hidden md:flex text-[var(--color-primary-content)] p-2 justify-evenly items-center relative"
-        class="hidden md:flex text-[var(--color-primary-content)] p-2 justify-evenly items-center"
-        style="background-color: var(--color-primary);"
-        x-data="{ open: false }"
-      >
-        <a href="/"><h3>TOTHAVEN</h3></a>
-
-        <!-- Dropdown Trigger -->
-        <div class="relative">
-          <button
-            @click="open = !open"
-            class="flex items-center gap-1 focus:outline-none"
-          >
-            Udforsk gården
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-            </svg>
-          </button>
-
-          <!-- Dropdown -->
-          <!-- Desktop dropdown -->
-          <div
-            x-show="open"
-            @click.away="open = false"
-            x-transition
-            class="absolute top-full bg-[var(--color-primary)] shadow-lg mt-4 flex z-50 w-xl"
-          >
-            <!-- Links -->
-            <div class="p- grid grid-cols-1 gap-2">
-              <div class="w-1/2 p-4 grid grid-cols-1 gap-">
-                <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-                  ><h2>Mød dyrene</h2></a
-                >
-                <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-                  ><h2>Alt det praktiske</h2></a
-                >
-                <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-                  ><h2>Mentor forløb</h2></a
-                >
-                <a href="/moddyrene" class="hover:text-[var(--color-accent)]"
-                  ><h2>strikkeriet</h2></a
-                >
-              </div>
-            </div>
-
-            <!-- Billede -->
-            <div class="w-full">
-              <img
-                src="../img/kaniner.webp"
-                alt="Gårdbillede"
-                class="object-cover"
-              />
-            </div>
+          <!-- Billede -->
+          <div class="w-1/2">
+            <img
+              src="../img/kaniner.webp"
+              alt="Gårdbillede"
+              class="w-full h-full object-cover rounded"
+            />
           </div>
         </div>
+      </div>
 
-        <a href="/gordmejeriet">Gårdmejeriet</a>
-        <a href="#">Gårdens produkter</a>
-        <a href="/omos">Om os</a>
-        <Link1 href="/biletter" variant="primary" size="small">Køb billet</Link1
-        >
-      </nav>
-    </header>
-  </div>
+      <a
+        href="/gordmejeriet"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >Gårdmejeriet</a
+      >
+      <a
+        href="#"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >Gårdens produkter</a
+      >
+      <a
+        href="/omos"
+        class="hover:text-[var(--color-accent)] hover:border-2 rounded border-[var(--color-accent)]"
+        >Om os</a
+      >
+      <Link1 href="/biletter" variant="primary" size="small">Køb billet</Link1>
+    </nav>
+  </header>
 </div>

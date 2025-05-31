@@ -39,7 +39,6 @@ import Heading from "../components/Heading.astro";
       url="/moddyrene"
       content="Lær vores søde dyr at kende"
       showOverlay={true}
-
     />
 
     <Forsidecard2
@@ -57,12 +56,10 @@ import Heading from "../components/Heading.astro";
       url="/gordmejeriet"
       content="Udforsk tothavens mejeri"
       showOverlay={true}
-
     />
   </section>
 
   <section class="relative py-20 overflow-hidden">
-    <!-- baggrund -->
     <div
       class="absolute inset-0 bg-[url('/img/smukkalkun.webp')] bg-cover bg-center bg-fixed"
     >
@@ -130,7 +127,6 @@ import Heading from "../components/Heading.astro";
         </Testemonial>
       </div>
 
-      <!-- Cta -->
       <div class="flex flex-col items-center justify-center text-center mt-16">
         <p class="text-[var(--color-primary-content)]/90 mb-6">
           Vil du også dele din oplevelse?
@@ -138,33 +134,39 @@ import Heading from "../components/Heading.astro";
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-        <Link1 href="#" target="_self" variant="secondary" size="small">Skriv en anmeldelse <svg
-          class="ml-2 w-4 h-4 inline-block"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"></path>
-        </svg>
-        </Link1>
+          <Link1 href="#" target="_self" variant="secondary" size="small"
+            >Skriv en anmeldelse <svg
+              class="ml-2 w-4 h-4 inline-block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </Link1>
 
-        <Link1 href="/biletter" target="_self" variant="secondary" size="small">Book dit besøg<svg
-          class="ml-2 w-4 h-4 inline-block"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"></path>
-        </svg>
-        </Link1>
+          <Link1
+            href="/biletter"
+            target="_self"
+            variant="secondary"
+            size="small"
+            >Book dit besøg<svg
+              class="ml-2 w-4 h-4 inline-block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </Link1>
         </div>
       </div>
     </div>

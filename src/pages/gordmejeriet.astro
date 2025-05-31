@@ -3,13 +3,16 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Mejericard from "../components/Mejericard.astro";
 import Iskort from "../components/Iskort.astro";
 import Link1 from "../components/Link1.astro";
-
 ---
 
 <MainLayout title="Tothaven Gårdmejeri">
-
   <!-- Progress bar -->
-<div id="progress-bar" aria-hidden="true" class="fixed top-0 left-0 h-3 bg-[var(--color-accent)] w-0 z-50 transition-all duration-75 rounded-r-full"></div>
+  <div
+    id="progress-bar"
+    aria-hidden="true"
+    class="fixed top-0 left-0 h-3 bg-[var(--color-accent)] w-0 z-50 transition-all duration-75 rounded-r-full"
+  >
+  </div>
 
   <!-- Hero Sektion og overskrift -->
   <div class="relative w-full overflow-hidden">
@@ -20,18 +23,17 @@ import Link1 from "../components/Link1.astro";
       loading="eager"
     />
     <div class="absolute bottom-12 left-12">
-      <h1 class="text-[var(--color-primary-content)]">
-        GÅRDMEJERIET
-      </h1>
+      <h1 class="text-[var(--color-primary-content)]">GÅRDMEJERIET</h1>
     </div>
   </div>
   <!-- Intro og billeder -->
   <section class="py-4 px-4">
     <div class="max-w-8xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        
         <!-- Venstre billedkort -->
-        <div class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] hidden lg:block">
+        <div
+          class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] hidden lg:block"
+        >
           <div class="relative w-full h-72 sm:h-96 lg:h-full">
             <img
               src="/img/rabarberpindeis.webp"
@@ -39,17 +41,23 @@ import Link1 from "../components/Link1.astro";
               class="w-full h-full object-cover absolute inset-0"
               style="position: absolute; inset: 0;"
               loading="lazy"
-              
             />
           </div>
         </div>
 
         <!-- Midterkort -->
-        <div class="flex flex-col justify-center p-8 lg:p-10 transition-all duration-300 bg-[var(--color-primary-content)] flex-1 min-h-[300px]">
+        <div
+          class="flex flex-col justify-center p-8 lg:p-10 transition-all duration-300 bg-[var(--color-primary-content)] flex-1 min-h-[300px]"
+        >
           <!-- gif ikon -->
-          <div class="flex justify-center lg:justify-center md:justify-start mb-8">
+          <div
+            class="flex justify-center lg:justify-center md:justify-start mb-8"
+          >
             <div class="relative">
-              <div class="absolute inset-0 bg-[var(--color-primary)] rounded-full animate-pulse"></div>
+              <div
+                class="absolute inset-0 bg-[var(--color-primary)] rounded-full animate-pulse"
+              >
+              </div>
               <img
                 src="/img/grishvid.gif"
                 alt="Animeret gris der springer"
@@ -58,24 +66,29 @@ import Link1 from "../components/Link1.astro";
               />
             </div>
           </div>
-          
+
           <!-- Content -->
           <div class="text-left space-y-6">
             <h3 class="text-[var(--color-primary)] mb-4">
               Se hvem der sælger vores varer
             </h3>
-            <div class="w-16 h-1 bg-[var(--color-primary-accent)] mx-0 mb-6"></div>
-            
+            <div class="w-16 h-1 bg-[var(--color-primary-accent)] mx-0 mb-6">
+            </div>
+
             <p class="text-[var(--color-primary)] leading-relaxed text-base">
-              Vi sælger hovedsageligt vores produkter fra Tothavens egen gårdbutik.
-              Vi har både en <strong>selvbetjeningsbutik</strong> som har åbent alle dage, hele året
-              fra kl 8 til 20 og en <strong>cafe/butik</strong> som har åbent i samme tidsrum som
-              besøgsgården – dvs. weekender, helligdage og skoleferier kl 14-17.
+              Vi sælger hovedsageligt vores produkter fra Tothavens egen
+              gårdbutik. Vi har både en <strong>selvbetjeningsbutik</strong> som
+              har åbent alle dage, hele året fra kl 8 til 20 og en <strong
+                >cafe/butik</strong
+              > som har åbent i samme tidsrum som besøgsgården – dvs. weekender,
+              helligdage og skoleferier kl 14-17.
             </p>
             <p class="text-[var(--color-primary)] leading-relaxed text-base">
               Men du kan også finde vores produkter hos vores forhandlere.
             </p>
-            <div class="mt-4 flex justify-center md:justify-start lg:justify-center">
+            <div
+              class="mt-4 flex justify-center md:justify-start lg:justify-center"
+            >
               <Link1
                 href="https://tothaven.dk/produkter/hvor-kan-man-koebe-det/"
                 target="_blank"
@@ -93,8 +106,7 @@ import Link1 from "../components/Link1.astro";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
+                    d="M9 5l7 7-7 7"></path>
                 </svg>
               </Link1>
             </div>
@@ -102,7 +114,9 @@ import Link1 from "../components/Link1.astro";
         </div>
 
         <!-- Højre billedkort -->
-        <div class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] bg-[var(--color-primary-content)] hidden lg:block">
+        <div
+          class="group relative overflow-hidden transition-all duration-300 transform flex-1 min-h-[300px] bg-[var(--color-primary-content)] hidden lg:block"
+        >
           <div class="relative w-full h-72 sm:h-96 lg:h-full">
             <img
               src="/img/oste.webp"
@@ -111,7 +125,6 @@ import Link1 from "../components/Link1.astro";
               style="position: absolute; inset: 0;"
               loading="lazy"
             />
-          
           </div>
         </div>
       </div>
@@ -129,10 +142,11 @@ import Link1 from "../components/Link1.astro";
       <h2 class="text-[var(--color-primary)] text-center">
         Læs om vores mejeriprodukter
       </h2>
-      <p class="text-[var(--color-primary)] text-center">Se hvordan mælk bliver til ost, yoghurt og andre favoritter</p>
+      <p class="text-[var(--color-primary)] text-center">
+        Se hvordan mælk bliver til ost, yoghurt og andre favoritter
+      </p>
     </div>
   </div>
-
 
   <!-- Om Mejeriet -->
   <Mejericard
@@ -170,18 +184,21 @@ import Link1 from "../components/Link1.astro";
       <h2 class="text-[var(--color-primary)] text-center">
         Hvilken smag er din favorit?
       </h2>
-      <p class="text-[var(--color-primary)] text-center">Klik på kortene og bliv klogere på de forskellige smage – hver is har sin egen charme</p>
+      <p class="text-[var(--color-primary)] text-center">
+        Klik på kortene og bliv klogere på de forskellige smage – hver is har
+        sin egen charme
+      </p>
     </div>
   </div>
 
   <!-- Is smage kort sektion -->
 
   <section class="py-16 px-4" aria-labelledby="ice-flavors-title">
-
     <div class="max-w-7xl mx-auto">
       <h2 id="ice-flavors-title" class="sr-only">Vores is smage</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"
+      >
         <Iskort
           image="/img/lakridsis.webp"
           title="Lakrids Gelato"
@@ -351,7 +368,6 @@ import Link1 from "../components/Link1.astro";
 </MainLayout>
 
 <script is:inline>
-
   // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
 </script>
@@ -360,7 +376,9 @@ import Link1 from "../components/Link1.astro";
   window.addEventListener("scroll", () => {
     const bar = document.getElementById("progress-bar");
     if (!bar) return; // Prevents errors if the element is missing
-    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    const scrolled =
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+      100;
     bar.style.width = `${scrolled}%`;
   });
 </script>

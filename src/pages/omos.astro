@@ -10,28 +10,51 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </div>
 
-
   <section class="overflow-x-hidden whitespace-nowrap">
     <div class="inline-block animate-infinite-scroll min-w-[200vw]">
-      {Array(8).fill(0).map(() => (
-        <>
-          <span>
-            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
-          </span>
-          <span>
-            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
-          </span>
-          <span>
-            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
-          </span>
-          <span>
-            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
-          </span>
-          <span>
-            <img class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain" src="/img/grisgrøn.gif" alt="grøn gris" />
-          </span>
-        </>
-      ))}
+      {
+        Array(8)
+          .fill(0)
+          .map(() => (
+            <>
+              <span>
+                <img
+                  class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+                  src="/img/grisgrøn.gif"
+                  alt="grøn gris"
+                />
+              </span>
+              <span>
+                <img
+                  class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+                  src="/img/grisgrøn.gif"
+                  alt="grøn gris"
+                />
+              </span>
+              <span>
+                <img
+                  class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+                  src="/img/grisgrøn.gif"
+                  alt="grøn gris"
+                />
+              </span>
+              <span>
+                <img
+                  class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+                  src="/img/grisgrøn.gif"
+                  alt="grøn gris"
+                />
+              </span>
+              <span>
+                <img
+                  class="inline-block w-20 sm:w-24 md:w-28 aspect-square h-auto object-contain"
+                  src="/img/grisgrøn.gif"
+                  alt="grøn gris"
+                />
+              </span>
+            </>
+          ))
+      }
     </div>
   </section>
   <section
@@ -68,10 +91,8 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
 </MainLayout>
 <script>
-  import {
-    animate
-  } from "motion";
-  
+  import { animate } from "motion";
+
   // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
 </script>

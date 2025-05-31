@@ -19,7 +19,6 @@ import Billetcard from "../components/Billetcard.astro";
   </div>
 
   <section class="form mx-8 md:mx-16">
-    <!-- Alpine.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
       defer></script>
@@ -71,7 +70,6 @@ import Billetcard from "../components/Billetcard.astro";
             titel="Køb årskort"
             tekst="Et årkort til Tothaven koster 275 kr. pr. person. Børn på 0 og 1 år har gratis adgang."
           >
-            <!-- Årskort knap kan evt. tilføjes her -->
             <button class="btn btn-primary cursor-pointer">Køb årskort</button>
           </Billetcard>
         </div>
@@ -83,7 +81,7 @@ import Billetcard from "../components/Billetcard.astro";
         x-transition
         class="relative mt-8 max-w-4xl mx-auto p-6 bg-[var(--color-base-200)] shadow-xl rounded-2xl"
       >
-        <!-- ❌ Luk knap -->
+        <!--  Luk knap -->
         <button
           class="absolute top-4 right-4 text-xl text-gray-400 hover:text-[var(--color-accent)] cursor-pointer"
           @click="showForm = false; currentStep = 0"
@@ -298,7 +296,6 @@ import Billetcard from "../components/Billetcard.astro";
     </section>
     <section class="max-w-xxl mx-auto mt-8 mb-16 px-8">
       <div class="grid grid-cols-7 border border-[var(--color-primary)]">
-        <!-- Ugedage -->
         <div
           class="border border-[var(--color-primary)] text-[var(--color-primary)] flex justify-center items-center h-15"
         >
@@ -555,6 +552,5 @@ import Billetcard from "../components/Billetcard.astro";
 <script>
   import { animate } from "motion";
 
-  // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
 </script>

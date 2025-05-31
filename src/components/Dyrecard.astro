@@ -11,46 +11,46 @@ const {
 ---
 
 <style>
-.card-container {
-  perspective: 1000px;
-}
+  .card-container {
+    perspective: 1000px;
+  }
 
-.card {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
 
-.card.flipped {
-  transform: rotateY(180deg);
-}
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
 
-.card-face {
-  backface-visibility: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+  .card-face {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 
-.card-front {
-  z-index: 2;
-}
+  .card-front {
+    z-index: 2;
+  }
 
-.card-back {
-  transform: rotateY(180deg);
-  justify-content: center;
-  align-items: flex-start;
-  background: var(--color-primary);
-  color: var(--color-primary-content, #fff);
-  z-index: 1;
-}
+  .card-back {
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--color-primary);
+    color: var(--color-primary-content, #fff);
+    z-index: 1;
+  }
 </style>
 
 <section
@@ -74,20 +74,27 @@ const {
   >
     <!-- Front -->
     <div class="card-face card-front">
-      <img 
-        src={image} 
-        alt={imagealt} 
+      <img
+        src={image}
+        alt={imagealt}
         class="absolute inset-0 w-full h-full object-cover"
       />
-      <div class="absolute bottom-0 w-full text-[var(--color-primary-content)] text-center py-2 px-3 opacity-90" style="background-color: var(--color-primary)">
+      <div
+        class="absolute bottom-0 w-full text-[var(--color-primary-content)] text-center py-2 px-3 opacity-90"
+        style="background-color: var(--color-primary)"
+      >
         <h4>{titel}</h4>
       </div>
     </div>
     <!-- Back -->
-    <div class="card-face card-back rounded-xl p-4 flex flex-col items-center justify-center shadow-xl">
+    <div
+      class="card-face card-back rounded-xl p-4 flex flex-col items-center justify-center shadow-xl"
+    >
       <div class="w-full flex flex-col items-center">
         <h4 class="md:mb-2 text-left">{backtitle || titel}</h4>
-        <p class="text-xs sm:text-sm lg:text-base text-left">{backtext || tekst}</p>
+        <p class="text-xs sm:text-sm lg:text-base text-left">
+          {backtext || tekst}
+        </p>
       </div>
     </div>
   </div>

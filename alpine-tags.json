@@ -1,0 +1,9 @@
+{
+  "version": 1.1,
+  "globalAttributes": [
+    { "name": "x-data" },
+    { "name": "x-ref" },
+    { "name": "@click" },
+    { "name": ":class" }
+  ]
+}

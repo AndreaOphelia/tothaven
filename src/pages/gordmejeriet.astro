@@ -7,12 +7,7 @@ import Link1 from "../components/Link1.astro";
 
 <MainLayout title="Tothaven Gårdmejeri">
   <!-- Progress bar -->
-  <div
-    id="progress-bar"
-    aria-hidden="true"
-    class="fixed top-0 left-0 h-3 bg-[var(--color-accent)] w-0 z-50 transition-all duration-75 rounded-r-full"
-  >
-  </div>
+<div class="z-1 progress-bar h-4 fixed w-full bg-gradient-to-r from-[var(--color-primary-content)] to-[var(--color-accent)] left-0 origin-top-left top-0 right-0 rounded-full"></div>
 
   <!-- Hero Sektion og overskrift -->
   <div class="relative w-full overflow-hidden">
@@ -365,18 +360,12 @@ import Link1 from "../components/Link1.astro";
   />
 </MainLayout>
 
-<script is:inline>
+<script>
+  import { animate, stagger, inView, scroll } from "motion";
   // Initial page load animation
   animate("body", { opacity: [0, 1] }, { duration: 0.5 });
+  // Progress bar animation on scroll
+  scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+
 </script>
 
-<script is:client>
-  window.addEventListener("scroll", () => {
-    const bar = document.getElementById("progress-bar");
-    if (!bar) return; // Prevents errors if the element is missing
-    const scrolled =
-      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
-      100;
-    bar.style.width = `${scrolled}%`;
-  });
-</script>
